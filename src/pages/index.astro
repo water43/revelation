@@ -1,0 +1,18 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${base}zh/`} />
+    <link rel="canonical" href={`${base}zh/`} />
+    <title>Revelation</title>
+    <script is:inline define:vars={{ base }}>
+      const preferred = (navigator.language || 'zh').toLowerCase().startsWith('en')
+        ? 'en'
+        : 'zh';
+      location.replace(base + preferred + '/');
+    </script>
+  </head>
+  <body></body>
+</html>

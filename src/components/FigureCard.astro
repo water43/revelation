@@ -1,0 +1,32 @@
+---
+import Portrait from './Portrait.astro';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  href: string;
+  name: string;
+  nameAlt: string;
+  era: string;
+  summary: string;
+  categories: string[];
+}
+
+const { locale, href, name, nameAlt, era, summary, categories } = Astro.props;
+const dict = t(locale);
+---
+
+<a class="figure-card" href={href}>
+  <Portrait name={name} />
+  <h2>{name}</h2>
+  <p class="alt">{nameAlt}</p>
+  <p class="era">{era}</p>
+  <p class="summary">{summary}</p>
+  <div class="tags">
+    {
+      categories.map((cat) => (
+        <span class="tag">{dict.categories[cat] ?? cat}</span>
+      ))
+    }
+  </div>
+</a>

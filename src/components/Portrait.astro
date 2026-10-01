@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  large?: boolean;
+}
+
+const { name, large = false } = Astro.props;
+const initial = name.trim().charAt(0).toUpperCase();
+---
+
+<div class="portrait" aria-hidden="true" data-large={large ? 'true' : undefined}>
+  <span>{initial}</span>
+</div>

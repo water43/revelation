@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+  langSwitchHref: string;
+  currentPath?: 'home' | 'figures';
+}
+
+const { locale, title, description, langSwitchHref, currentPath } = Astro.props;
+const dict = t(locale);
+const pageTitle = title ? `${title} · ${dict.brand}` : dict.brand;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description ?? dict.tagline} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href={`${base}${locale}/`}>{dict.brand}</a>
+        <nav class="nav" aria-label="main">
+          <a
+            href={`${base}${locale}/`}
+            aria-current={currentPath === 'home' ? 'page' : undefined}>{dict.home}</a
+          >
+          <a
+            href={`${base}${locale}/figures/`}
+            aria-current={currentPath === 'figures' ? 'page' : undefined}
+            >{dict.figures}</a
+          >
+          <a class="lang-switch" href={langSwitchHref}>{dict.langLabel}</a>
+        </nav>
+      </header>
+      <main class="site-main">
+        <slot />
+      </main>
+      <footer class="site-footer">{dict.footer}</footer>
+    </div>
+  </body>
+</html>

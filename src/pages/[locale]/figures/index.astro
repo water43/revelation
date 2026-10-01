@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FigureCard from '../../../components/FigureCard.astro';
+import { locales, t, type Locale } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const dict = t(locale);
+const base = import.meta.env.BASE_URL;
+const other = locale === 'zh' ? 'en' : 'zh';
+
+const all = await getCollection('figures');
+const figures = all
+  .filter((entry) => entry.id.startsWith(`${locale}/`))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const categoryKeys = ['literary', 'philosopher', 'religion'] as const;
+---
+
+<BaseLayout
+  locale={locale}
+  title={dict.figures}
+  description={dict.tagline}
+  langSwitchHref={`${base}${other}/figures/`}
+  currentPath="figures"
+>
+  <div class="page-head">
+    <h1>{dict.figures}</h1>
+  </div>
+
+  <div class="filters" data-filters>
+    <button type="button" class="filter-chip is-active" data-category="all">{dict.all}</button>
+    {
+      categoryKeys.map((key) => (
+        <button type="button" class="filter-chip" data-category={key}>
+          {dict.categories[key]}
+        </button>
+      ))
+    }
+    <input
+      class="search-input"
+      type="search"
+      data-search
+      placeholder={dict.searchPlaceholder}
+      aria-label={dict.searchPlaceholder}
+    />
+  </div>
+
+  <ul class="figure-grid" data-figure-grid>
+    {
+      figures.map((figure) => (
+        <li
+          data-figure-item
+          data-name={`${figure.data.name} ${figure.data.nameAlt}`.toLowerCase()}
+          data-categories={figure.data.categories.join(',')}
+        >
+          <FigureCard
+            locale={locale}
+            href={`${base}${locale}/figures/${figure.data.slug}/`}
+            name={figure.data.name}
+            nameAlt={figure.data.nameAlt}
+            era={figure.data.era}
+            summary={figure.data.summary}
+            categories={figure.data.categories}
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <p class="empty" data-empty hidden>{dict.empty}</p>
+</BaseLayout>
+
+<script>
+  const root = document.querySelector('[data-filters]');
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-figure-item]'));
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+  const search = document.querySelector<HTMLInputElement>('[data-search]');
+  let activeCategory = 'all';
+
+  function applyFilters() {
+    const q = (search?.value || '').trim().toLowerCase();
+    let visible = 0;
+    for (const item of items) {
+      const cats = (item.dataset.categories || '').split(',');
+      const name = item.dataset.name || '';
+      const catOk = activeCategory === 'all' || cats.includes(activeCategory);
+      const qOk = !q || name.includes(q);
+      const show = catOk && qOk;
+      item.hidden = !show;
+      if (show) visible += 1;
+    }
+    if (empty) empty.hidden = visible > 0;
+  }
+
+  root?.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.category || 'all';
+      root.querySelectorAll('.filter-chip').forEach((el) => el.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      applyFilters();
+    });
+  });
+
+  search?.addEventListener('input', applyFilters);
+</script>

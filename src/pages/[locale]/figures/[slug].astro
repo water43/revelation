@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Portrait from '../../../components/Portrait.astro';
+import { t, type Locale } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const all = await getCollection('figures');
+  return all.map((entry) => {
+    const [locale, ...rest] = entry.id.split('/');
+    const fileSlug = rest.join('/').replace(/\.md$/, '');
+    return {
+      params: {
+        locale,
+        slug: entry.data.slug || fileSlug,
+      },
+      props: { entry, locale: locale as Locale },
+    };
+  });
+}
+
+const { entry, locale } = Astro.props;
+const { Content } = await render(entry);
+const dict = t(locale);
+const base = import.meta.env.BASE_URL;
+const other = locale === 'zh' ? 'en' : 'zh';
+const { data } = entry;
+---
+
+<BaseLayout
+  locale={locale}
+  title={data.name}
+  description={data.summary}
+  langSwitchHref={`${base}${other}/figures/${data.slug}/`}
+  currentPath="figures"
+>
+  <a class="back-link" href={`${base}${locale}/figures/`}>← {dict.backToList}</a>
+  <article class="detail">
+    <div class="detail-portrait">
+      <Portrait name={data.name} large />
+    </div>
+    <div class="detail-meta">
+      <h1>{data.name}</h1>
+      <p class="alt">{data.nameAlt}</p>
+      <p class="era">{data.era}</p>
+      <div class="tags">
+        {
+          data.categories.map((cat) => (
+            <span class="tag">{dict.categories[cat] ?? cat}</span>
+          ))
+        }
+      </div>
+      <div class="detail-body">
+        <Content />
+      </div>
+      {
+        data.works.length > 0 && (
+          <section class="works">
+            <h2>{dict.works}</h2>
+            <ul>
+              {data.works.map((work) => (
+                <li>{work}</li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>
