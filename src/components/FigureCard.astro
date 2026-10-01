@@ -5,6 +5,7 @@ import { t, type Locale } from '../i18n/ui';
 interface Props {
   locale: Locale;
   href: string;
+  slug: string;
   name: string;
   nameAlt: string;
   era: string;
@@ -12,12 +13,12 @@ interface Props {
   categories: string[];
 }
 
-const { locale, href, name, nameAlt, era, summary, categories } = Astro.props;
+const { locale, href, slug, name, nameAlt, era, summary, categories } = Astro.props;
 const dict = t(locale);
 ---
 
 <a class="figure-card" href={href}>
-  <Portrait name={name} />
+  <Portrait name={name} slug={slug} />
   <h2>{name}</h2>
   <p class="alt">{nameAlt}</p>
   <p class="era">{era}</p>

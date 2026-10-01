@@ -1,13 +1,22 @@
 ---
 interface Props {
   name: string;
+  slug?: string;
   large?: boolean;
 }
 
-const { name, large = false } = Astro.props;
+const { name, slug, large = false } = Astro.props;
 const initial = name.trim().charAt(0).toUpperCase();
+const base = import.meta.env.BASE_URL;
+const src = slug ? `${base}portraits/${slug}.jpg` : undefined;
 ---
 
-<div class="portrait" aria-hidden="true" data-large={large ? 'true' : undefined}>
-  <span>{initial}</span>
+<div class:list={['portrait', { 'has-image': Boolean(src) }]} aria-hidden="true" data-large={large ? 'true' : undefined}>
+  {
+    src ? (
+      <img src={src} alt="" width="480" height="600" loading="lazy" decoding="async" />
+    ) : (
+      <span>{initial}</span>
+    )
+  }
 </div>
