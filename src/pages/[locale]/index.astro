@@ -10,35 +10,172 @@ const locale = Astro.params.locale as Locale;
 const dict = t(locale);
 const base = import.meta.env.BASE_URL;
 const other = locale === 'zh' ? 'en' : 'zh';
+const poems = dict.poems;
+const first = poems[0];
 ---
 
 <BaseLayout
   locale={locale}
-  description={`${dict.poemLines[0]} — ${dict.poemAttribution}`}
+  description={`${first.lines[0]} — ${first.attribution}`}
   langSwitchHref={`${base}${other}/`}
   currentPath="home"
 >
-  <section class="home-screen">
+  <section class="home-screen" data-poem-carousel aria-roledescription="carousel" aria-label={dict.poemCarouselLabel}>
     <div class="home-copy">
       <p class="home-brand">{dict.brand}</p>
-      <blockquote class="home-poem">
+      <div class="home-stage" data-poem-stage>
         {
-          dict.poemLines.map((line) => (
-            <p>{line}</p>
+          poems.map((poem, index) => (
+            <article
+              class:list={['home-slide', { 'is-active': index === 0 }]}
+              data-poem-slide
+              data-index={index}
+              aria-hidden={index === 0 ? 'false' : 'true'}
+            >
+              <blockquote class="home-poem">
+                {poem.lines.map((line) => (
+                  <p>{line}</p>
+                ))}
+              </blockquote>
+              <p class="home-attr">{poem.attribution}</p>
+            </article>
           ))
         }
-      </blockquote>
-      <p class="home-attr">{dict.poemAttribution}</p>
-      <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
+      </div>
+      <div class="home-controls">
+        <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
+        <div class="home-dots" role="tablist" aria-label={dict.poemCarouselLabel}>
+          {
+            poems.map((_, index) => (
+              <button
+                type="button"
+                class:list={['home-dot', { 'is-active': index === 0 }]}
+                data-poem-dot
+                data-index={index}
+                aria-label={`${index + 1}`}
+                aria-selected={index === 0 ? 'true' : 'false'}
+              />
+            ))
+          }
+        </div>
+      </div>
     </div>
-    <figure class="home-art">
-      <img
-        src={`${base}home/gitanjali-1.png`}
-        alt={dict.poemAttribution}
-        width="1024"
-        height="1024"
-        decoding="async"
-      />
-    </figure>
+    <div class="home-art-stack" data-poem-art>
+      {
+        poems.map((poem, index) => (
+          <figure
+            class:list={['home-art', { 'is-active': index === 0 }]}
+            data-poem-figure
+            data-index={index}
+            aria-hidden={index === 0 ? 'false' : 'true'}
+          >
+            <img
+              src={`${base}${poem.image}`}
+              alt={poem.attribution}
+              width="1024"
+              height="1024"
+              decoding="async"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          </figure>
+        ))
+      }
+    </div>
+    <button type="button" class="home-nav home-nav--prev" data-poem-prev aria-label={dict.poemPrev}>‹</button>
+    <button type="button" class="home-nav home-nav--next" data-poem-next aria-label={dict.poemNext}>›</button>
   </section>
 </BaseLayout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-poem-carousel]');
+  if (root) {
+    const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-poem-slide]'));
+    const figures = Array.from(root.querySelectorAll<HTMLElement>('[data-poem-figure]'));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-poem-dot]'));
+    const effects = ['effect-fade', 'effect-rise', 'effect-wipe'] as const;
+    let index = 0;
+    let timer: number | undefined;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const interval = 8000;
+
+    function apply(next: number, dir = 1) {
+      if (!slides.length) return;
+      const prev = index;
+      index = (next + slides.length) % slides.length;
+      if (prev === index) return;
+
+      const effect = reduceMotion
+        ? 'effect-fade'
+        : effects[index % effects.length];
+
+      root?.classList.remove(...effects);
+      root?.classList.add(effect);
+      root?.setAttribute('data-dir', dir >= 0 ? 'next' : 'prev');
+
+      slides.forEach((slide, i) => {
+        const on = i === index;
+        slide.classList.toggle('is-active', on);
+        slide.classList.toggle('is-exit', i === prev);
+        slide.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (i !== prev && i !== index) slide.classList.remove('is-exit');
+      });
+      figures.forEach((fig, i) => {
+        const on = i === index;
+        fig.classList.toggle('is-active', on);
+        fig.classList.toggle('is-exit', i === prev);
+        fig.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (i !== prev && i !== index) fig.classList.remove('is-exit');
+      });
+      dots.forEach((dot, i) => {
+        const on = i === index;
+        dot.classList.toggle('is-active', on);
+        dot.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+
+      window.setTimeout(() => {
+        slides.forEach((s) => s.classList.remove('is-exit'));
+        figures.forEach((f) => f.classList.remove('is-exit'));
+      }, reduceMotion ? 0 : 700);
+    }
+
+    function next() {
+      apply(index + 1, 1);
+    }
+    function prev() {
+      apply(index - 1, -1);
+    }
+
+    function start() {
+      if (reduceMotion || slides.length < 2) return;
+      stop();
+      timer = window.setInterval(next, interval);
+    }
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+    }
+
+    root.querySelector('[data-poem-next]')?.addEventListener('click', () => {
+      next();
+      start();
+    });
+    root.querySelector('[data-poem-prev]')?.addEventListener('click', () => {
+      prev();
+      start();
+    });
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const target = Number(dot.dataset.index || 0);
+        apply(target, target >= index ? 1 : -1);
+        start();
+      });
+    });
+
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    start();
+  }
+</script>
