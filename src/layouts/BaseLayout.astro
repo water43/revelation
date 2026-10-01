@@ -14,10 +14,11 @@ const { locale, title, description, langSwitchHref, currentPath } = Astro.props;
 const dict = t(locale);
 const pageTitle = title ? `${title} · ${dict.brand}` : dict.brand;
 const base = import.meta.env.BASE_URL;
+const isHome = currentPath === 'home';
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} class:list={[{ 'page-home': isHome }]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,10 +37,13 @@ const base = import.meta.env.BASE_URL;
       <header class="site-header">
         <a class="brand" href={`${base}${locale}/`}>{dict.brand}</a>
         <nav class="nav" aria-label="main">
-          <a
-            href={`${base}${locale}/`}
-            aria-current={currentPath === 'home' ? 'page' : undefined}>{dict.home}</a
-          >
+          {
+            !isHome && (
+              <a href={`${base}${locale}/`} aria-current={undefined}>
+                {dict.home}
+              </a>
+            )
+          }
           <a
             href={`${base}${locale}/figures/`}
             aria-current={currentPath === 'figures' ? 'page' : undefined}
@@ -48,10 +52,10 @@ const base = import.meta.env.BASE_URL;
           <a class="lang-switch" href={langSwitchHref}>{dict.langLabel}</a>
         </nav>
       </header>
-      <main class="site-main">
+      <main class:list={['site-main', { 'site-main--home': isHome }]}>
         <slot />
       </main>
-      <footer class="site-footer">{dict.footer}</footer>
+      {!isHome && <footer class="site-footer">{dict.footer}</footer>}
     </div>
   </body>
 </html>

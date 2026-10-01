@@ -135,6 +135,14 @@ img {
   padding: 0 1.5rem 4rem;
 }
 
+.site-main--home {
+  max-width: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 .site-footer {
   max-width: var(--max);
   margin: 0 auto;
@@ -145,41 +153,111 @@ img {
   width: 100%;
 }
 
-/* Hero */
-.hero {
-  min-height: calc(100vh - 5.5rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem 0 4rem;
-  animation: rise 0.9s ease both;
+/* Home: one screen, no scroll */
+html.page-home,
+html.page-home body {
+  height: 100%;
+  overflow: hidden;
 }
 
-.hero-brand {
+html.page-home .site-shell {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+html.page-home .site-header {
+  padding: 0.85rem 1.5rem;
+  flex-shrink: 0;
+}
+
+html.page-home .site-main--home {
+  flex: 1;
+  min-height: 0;
+}
+
+.home-screen {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: center;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem) clamp(0.75rem, 2vh, 1.5rem);
+}
+
+.home-copy {
+  min-width: 0;
+  animation: rise 0.85s ease both;
+}
+
+.home-brand {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1;
   letter-spacing: 0.02em;
-  margin: 0 0 1.25rem;
+  margin: 0 0 clamp(0.75rem, 2vh, 1.35rem);
 }
 
-.hero-tagline {
-  max-width: 28rem;
-  margin: 0 0 2.25rem;
+.home-poem {
+  margin: 0 0 clamp(0.65rem, 1.5vh, 1rem);
+  padding: 0;
+  border: 0;
+}
+
+.home-poem p {
+  margin: 0 0 0.7em;
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 1.35vw + 0.45rem, 1.12rem);
+  line-height: 1.7;
   color: var(--ink-soft);
-  font-size: 1.15rem;
+}
+
+.home-poem p:last-child {
+  margin-bottom: 0;
+}
+
+.home-attr {
+  margin: 0 0 clamp(0.85rem, 2vh, 1.4rem);
+  color: var(--accent);
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  letter-spacing: 0.06em;
+  animation: rise 0.9s ease 0.08s both;
+}
+
+.home-art {
+  margin: 0;
+  min-height: 0;
+  height: min(72dvh, 100%);
+  max-height: 72dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rise 1s ease 0.12s both;
+}
+
+.home-art img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.85rem 1.4rem;
+  padding: 0.75rem 1.25rem;
   background: var(--ink);
   color: var(--paper);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.06em;
   transition: transform 0.25s ease, background 0.25s ease;
   width: fit-content;
@@ -193,6 +271,58 @@ img {
 
 .cta::after {
   content: '→';
+}
+
+@media (max-width: 860px) {
+  .home-screen {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.65rem;
+    align-content: center;
+    padding-bottom: 0.6rem;
+  }
+
+  .home-brand {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    margin-bottom: 0.55rem;
+  }
+
+  .home-poem p {
+    font-size: clamp(0.78rem, 2.6vw, 0.95rem);
+    line-height: 1.55;
+    margin-bottom: 0.5em;
+  }
+
+  .home-attr {
+    margin-bottom: 0.7rem;
+  }
+
+  .home-art {
+    height: min(38dvh, 42vw);
+    max-height: 38dvh;
+    order: -1;
+  }
+
+  .cta {
+    padding: 0.65rem 1.05rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 861px) {
+  .home-brand {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .home-poem p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 0.45em;
+  }
+
+  .home-art {
+    max-height: 64dvh;
+  }
 }
 
 /* Figures list */

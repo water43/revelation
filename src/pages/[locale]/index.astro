@@ -14,13 +14,31 @@ const other = locale === 'zh' ? 'en' : 'zh';
 
 <BaseLayout
   locale={locale}
-  description={dict.tagline}
+  description={`${dict.poemLines[0]} — ${dict.poemAttribution}`}
   langSwitchHref={`${base}${other}/`}
   currentPath="home"
 >
-  <section class="hero">
-    <h1 class="hero-brand">{dict.brand}</h1>
-    <p class="hero-tagline">{dict.tagline}</p>
-    <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
+  <section class="home-screen">
+    <div class="home-copy">
+      <p class="home-brand">{dict.brand}</p>
+      <blockquote class="home-poem">
+        {
+          dict.poemLines.map((line) => (
+            <p>{line}</p>
+          ))
+        }
+      </blockquote>
+      <p class="home-attr">{dict.poemAttribution}</p>
+      <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
+    </div>
+    <figure class="home-art">
+      <img
+        src={`${base}home/gitanjali-1.png`}
+        alt={dict.poemAttribution}
+        width="1024"
+        height="1024"
+        decoding="async"
+      />
+    </figure>
   </section>
 </BaseLayout>
