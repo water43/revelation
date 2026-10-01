@@ -21,65 +21,67 @@ const first = poems[0];
   currentPath="home"
 >
   <section class="home-screen" data-poem-carousel aria-roledescription="carousel" aria-label={dict.poemCarouselLabel}>
-    <div class="home-copy">
-      <p class="home-brand">{dict.brand}</p>
-      <div class="home-stage" data-poem-stage>
-        {
-          poems.map((poem, index) => (
-            <article
-              class:list={['home-slide', { 'is-active': index === 0 }]}
-              data-poem-slide
-              data-index={index}
-              aria-hidden={index === 0 ? 'false' : 'true'}
-            >
-              <blockquote class="home-poem">
-                {poem.lines.map((line) => (
-                  <p>{line}</p>
-                ))}
-              </blockquote>
-              <p class="home-attr">{poem.attribution}</p>
-            </article>
-          ))
-        }
-      </div>
-      <div class="home-controls">
-        <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
-        <div class="home-dots" role="tablist" aria-label={dict.poemCarouselLabel}>
+    <p class="home-brand">{dict.brand}</p>
+    <div class="home-pair">
+      <div class="home-copy">
+        <div class="home-stage" data-poem-stage>
           {
-            poems.map((_, index) => (
-              <button
-                type="button"
-                class:list={['home-dot', { 'is-active': index === 0 }]}
-                data-poem-dot
+            poems.map((poem, index) => (
+              <article
+                class:list={['home-slide', { 'is-active': index === 0 }]}
+                data-poem-slide
                 data-index={index}
-                aria-label={`${index + 1}`}
-                aria-selected={index === 0 ? 'true' : 'false'}
-              />
+                aria-hidden={index === 0 ? 'false' : 'true'}
+              >
+                <blockquote class="home-poem">
+                  {poem.lines.map((line) => (
+                    <p>{line}</p>
+                  ))}
+                </blockquote>
+                <p class="home-attr">{poem.attribution}</p>
+              </article>
             ))
           }
         </div>
+        <div class="home-controls">
+          <a class="cta" href={`${base}${locale}/figures/`}>{dict.cta}</a>
+          <div class="home-dots" role="tablist" aria-label={dict.poemCarouselLabel}>
+            {
+              poems.map((_, index) => (
+                <button
+                  type="button"
+                  class:list={['home-dot', { 'is-active': index === 0 }]}
+                  data-poem-dot
+                  data-index={index}
+                  aria-label={`${index + 1}`}
+                  aria-selected={index === 0 ? 'true' : 'false'}
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="home-art-stack" data-poem-art>
-      {
-        poems.map((poem, index) => (
-          <figure
-            class:list={['home-art', { 'is-active': index === 0 }]}
-            data-poem-figure
-            data-index={index}
-            aria-hidden={index === 0 ? 'false' : 'true'}
-          >
-            <img
-              src={`${base}${poem.image}`}
-              alt={poem.attribution}
-              width="1024"
-              height="1024"
-              decoding="async"
-              loading={index === 0 ? 'eager' : 'lazy'}
-            />
-          </figure>
-        ))
-      }
+      <div class="home-art-stack" data-poem-art>
+        {
+          poems.map((poem, index) => (
+            <figure
+              class:list={['home-art', { 'is-active': index === 0 }]}
+              data-poem-figure
+              data-index={index}
+              aria-hidden={index === 0 ? 'false' : 'true'}
+            >
+              <img
+                src={`${base}${poem.image}`}
+                alt={poem.attribution}
+                width="1024"
+                height="1024"
+                decoding="async"
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </figure>
+          ))
+        }
+      </div>
     </div>
     <button type="button" class="home-nav home-nav--prev" data-poem-prev aria-label={dict.poemPrev}>‹</button>
     <button type="button" class="home-nav home-nav--next" data-poem-next aria-label={dict.poemNext}>›</button>

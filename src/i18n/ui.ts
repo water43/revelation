@@ -61,6 +61,16 @@ export const ui = {
           '在歌唱的欣喜中陶醉，我忘乎所以，你是我的主人，我却称你为朋友。',
         ],
       },
+      {
+        image: 'home/donne-1.jpg',
+        attribution: '约翰·多恩 ·《神圣十四行诗》',
+        lines: [
+          '三位一体之神，击打我的心吧；你至今还只是敲打、吹拂、普照，试图修补；',
+          '好让我站起，愿你推倒我，弯下你的力量，打碎、吹散、焚烧，使我焕然一新。',
+          '我像一座被僭夺的城池，本该属你，苦苦想接纳你，却终无结果。理性，你在我心中的总督，本应保卫我，却成了俘虏，显得软弱或不忠。',
+          '然而我深深爱你，也渴望被你所爱，但我已许配给你的仇敌：求你离异我，解开或再次斩断那结，把我囚进你怀——因除非你迷住我，我永不得自由；除非你强夺我，我永不得纯洁。',
+        ],
+      },
     ] satisfies PoemSlide[],
   },
   en: {
@@ -113,6 +123,16 @@ export const ui = {
           'I know thou takest pleasure in my singing. I know that only as a singer I come before thy presence.',
           'I touch by the edge of the far-spreading wing of my song thy feet which I could never aspire to reach.',
           'Drunk with the joy of singing I forget myself and call thee friend who art my lord.',
+        ],
+      },
+      {
+        image: 'home/donne-1.jpg',
+        attribution: 'John Donne · Holy Sonnets',
+        lines: [
+          'Batter my heart, three-person’d God; for you as yet but knock, breathe, shine, and seek to mend;',
+          'That I may rise, and stand, o’erthrow me, and bend your force, to break, blow, burn, and make me new.',
+          'I, like an usurp’d town, to another due, labour to admit you, but Oh, to no end. Reason, your viceroy in me, me should defend, but is captived, and proves weak or untrue.',
+          'Yet dearly I love you, and would be loved fain, but am betroth’d unto your enemy: divorce me, untie or break that knot again, take me to you, imprison me, for I, except you enthrall me, never shall be free, nor ever chaste, except you ravish me.',
         ],
       },
     ] satisfies PoemSlide[],
