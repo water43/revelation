@@ -4,15 +4,15 @@ name: W. Edwards Deming
 nameAlt: 威廉·爱德华兹·戴明
 era: 1900–1993
 categories: [engineer]
-summary: He brought statistics and systems thinking into industrial quality and management—fixing process and system variation, not blaming individuals alone.
+summary: American statistician, professor, and consultant known for statistical quality control and his Fourteen Points; hugely influential on postwar Japanese industry.
 works:
-  - Fourteen Points
-  - Quality management and continual improvement
-  - Systems view of organizations
-  - Influence on Japanese industry
+  - Out of the Crisis
+  - Fourteen Points of management
+  - Statistical process control
+  - System of Profound Knowledge
 order: 95
 ---
 
-Deming trained in engineering, mathematics, physics, and mathematical statistics, then applied statistics and systems thinking to production and management rather than staying in pure theory. When products fail, he asked why the process allowed the error, why quality control missed it, why the system produced that variation.
+W. Edwards Deming was an American statistician and quality-management expert. Trained in engineering and mathematical physics, he applied statistical methods to industry and government surveys. After World War II he taught statistical quality control and management ideas in Japan, helping shape manufacturing quality systems there.
 
-That engineer-plus-systems mind shaped Japanese industrial quality and still resonates with automation, CI/CD, and quality control in software engineering.
+Deming stressed understanding process variation, continual improvement, and systems management, and is widely known for his Fourteen Points. His work linked statistics to organizational practice and became a major source of modern total quality management and continual-improvement movements.

@@ -4,15 +4,15 @@ name: Henry Ford
 nameAlt: 亨利·福特
 era: 1863–1947
 categories: [engineer]
-summary: He turned the automobile into an industrial empire through standardization, the assembly line, and mass production—systems made real, not a lone invention.
+summary: American industrialist and founder of the Ford Motor Company, famed for the moving assembly line and mass production of the Model T.
 works:
   - Model T
-  - Assembly-line production
-  - Ford factory system
-  - High-volume low-cost manufacturing
+  - Moving assembly line
+  - Ford Motor Company
+  - High-wage, low-price strategy
 order: 85
 ---
 
-Ford differs slightly from Taylor: Taylor studied production systems; Ford built them into an industrial empire. He did not invent the car, but he excelled at making a complex industrial product standardized, line-driven, scalable, and cost-controlled.
+Henry Ford was a central figure of the American automobile industry and a founder of the Ford Motor Company. He did not invent the car, but in the early twentieth century he cut costs dramatically through the moving assembly line, interchangeable parts, and mass production, bringing the Model T to a much wider market.
 
-From standard parts to standard steps, the line, quality, and scale, the chain rhymes with software engineering’s components, conventions, CI/CD, automated tests, and scaled delivery.
+Ford’s practices reshaped manufacturing organization and helped define “Fordism.” His labor policies, social views, and business methods were also complex and contested, making him a major subject in the history of twentieth-century industry.
