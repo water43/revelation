@@ -19,15 +19,19 @@ const dict = t(locale);
 
 <a class="figure-card" href={href}>
   <Portrait name={name} slug={slug} />
-  <h2>{name}</h2>
-  <p class="alt">{nameAlt}</p>
-  <p class="era">{era}</p>
-  <p class="summary">{summary}</p>
-  <div class="tags">
-    {
-      categories.map((cat) => (
-        <span class="tag">{dict.categories[cat] ?? cat}</span>
-      ))
-    }
+  <div class="figure-card-body">
+    <div class="figure-card-head">
+      <h2>{name}</h2>
+      <p class="alt">{nameAlt}</p>
+      <p class="era">{era}</p>
+    </div>
+    <p class="summary">{summary}</p>
+    <div class="tags">
+      {
+        categories.map((cat) => (
+          <span class="tag">{dict.categories[cat] ?? cat}</span>
+        ))
+      }
+    </div>
   </div>
 </a>

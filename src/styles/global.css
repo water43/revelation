@@ -633,6 +633,33 @@ html.page-home .site-main--home {
   outline-offset: 1px;
 }
 
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.view-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.view-btn + .view-btn {
+  border-left: 1px solid var(--line);
+}
+
+.view-btn:hover,
+.view-btn.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .figure-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -640,6 +667,12 @@ html.page-home .site-main--home {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.figure-grid[data-view='list'] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .figure-card {
@@ -699,6 +732,58 @@ html.page-home .site-main--home {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.figure-grid[data-view='list'] .figure-card {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr);
+  gap: 0.75rem 1rem;
+  align-items: center;
+  padding: 0.65rem 0.9rem;
+  box-shadow: none;
+}
+
+.figure-grid[data-view='list'] .figure-card:hover {
+  transform: none;
+  background: rgba(255, 250, 242, 0.95);
+}
+
+.figure-grid[data-view='list'] .figure-card .portrait {
+  width: 3.4rem;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.figure-grid[data-view='list'] .figure-card .portrait span {
+  font-size: 1.25rem;
+}
+
+.figure-grid[data-view='list'] .figure-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+}
+
+.figure-grid[data-view='list'] .figure-card h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.figure-grid[data-view='list'] .figure-card .alt,
+.figure-grid[data-view='list'] .figure-card .era {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.figure-grid[data-view='list'] .figure-card .summary {
+  margin-top: 0.2rem;
+  font-size: 0.88rem;
+  -webkit-line-clamp: 1;
+}
+
+.figure-grid[data-view='list'] .figure-card .tags {
+  margin-top: 0.35rem;
 }
 
 .tags {

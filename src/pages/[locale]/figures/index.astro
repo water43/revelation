@@ -48,9 +48,13 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer'] as cons
       placeholder={dict.searchPlaceholder}
       aria-label={dict.searchPlaceholder}
     />
+    <div class="view-toggle" role="group" aria-label={dict.viewLabel}>
+      <button type="button" class="view-btn is-active" data-view="card" aria-pressed="true">{dict.viewCard}</button>
+      <button type="button" class="view-btn" data-view="list" aria-pressed="false">{dict.viewList}</button>
+    </div>
   </div>
 
-  <ul class="figure-grid" data-figure-grid>
+  <ul class="figure-grid" data-figure-grid data-view="card">
     {
       figures.map((figure) => (
         <li
@@ -77,10 +81,13 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer'] as cons
 
 <script>
   const root = document.querySelector('[data-filters]');
+  const grid = document.querySelector<HTMLElement>('[data-figure-grid]');
   const items = Array.from(document.querySelectorAll<HTMLElement>('[data-figure-item]'));
   const empty = document.querySelector<HTMLElement>('[data-empty]');
   const search = document.querySelector<HTMLInputElement>('[data-search]');
+  const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view]'));
   let activeCategory = 'all';
+  const storageKey = 'revelation-figure-view';
 
   function applyFilters() {
     const q = (search?.value || '').trim().toLowerCase();
@@ -97,6 +104,21 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer'] as cons
     if (empty) empty.hidden = visible > 0;
   }
 
+  function setView(view: string) {
+    const mode = view === 'list' ? 'list' : 'card';
+    grid?.setAttribute('data-view', mode);
+    viewBtns.forEach((btn) => {
+      const on = btn.dataset.view === mode;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try {
+      localStorage.setItem(storageKey, mode);
+    } catch {
+      /* ignore */
+    }
+  }
+
   root?.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((btn) => {
     btn.addEventListener('click', () => {
       activeCategory = btn.dataset.category || 'all';
@@ -106,5 +128,16 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer'] as cons
     });
   });
 
+  viewBtns.forEach((btn) => {
+    btn.addEventListener('click', () => setView(btn.dataset.view || 'card'));
+  });
+
   search?.addEventListener('input', applyFilters);
+
+  try {
+    const saved = localStorage.getItem(storageKey);
+    if (saved === 'list' || saved === 'card') setView(saved);
+  } catch {
+    /* ignore */
+  }
 </script>
