@@ -1,4 +1,7 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
+
 interface Props {
   name: string;
   slug?: string;
@@ -8,7 +11,11 @@ interface Props {
 const { name, slug, large = false } = Astro.props;
 const initial = name.trim().charAt(0).toUpperCase();
 const base = import.meta.env.BASE_URL;
-const src = slug ? `${base}portraits/${slug}.jpg` : undefined;
+const portraitFile = slug
+  ? path.join(process.cwd(), 'public', 'portraits', `${slug}.jpg`)
+  : '';
+const hasPortrait = Boolean(slug && fs.existsSync(portraitFile));
+const src = hasPortrait ? `${base}portraits/${slug}.jpg` : undefined;
 ---
 
 <div class:list={['portrait', { 'has-image': Boolean(src) }]} aria-hidden="true" data-large={large ? 'true' : undefined}>

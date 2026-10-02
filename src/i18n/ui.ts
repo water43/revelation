@@ -11,7 +11,7 @@ export type PoemSlide = {
 export const ui = {
   zh: {
     brand: 'Revelation',
-    tagline: '历史上的文学家、哲学家与思想者',
+    tagline: '历史上的文学家、哲学家、工程师与思想者',
     cta: '进入图鉴',
     figures: '图鉴',
     home: '首页',
@@ -20,6 +20,7 @@ export const ui = {
       literary: '文学家',
       philosopher: '哲学家',
       religion: '宗教',
+      engineer: '工程',
     } as Record<string, string>,
     works: '代表作品',
     backToList: '返回图鉴',
@@ -75,7 +76,7 @@ export const ui = {
   },
   en: {
     brand: 'Revelation',
-    tagline: 'Writers, philosophers, and thinkers across history',
+    tagline: 'Writers, philosophers, engineers, and thinkers across history',
     cta: 'Enter the gallery',
     figures: 'Gallery',
     home: 'Home',
@@ -84,6 +85,7 @@ export const ui = {
       literary: 'Literary',
       philosopher: 'Philosopher',
       religion: 'Religion',
+      engineer: 'Engineer',
     } as Record<string, string>,
     works: 'Notable works',
     backToList: 'Back to gallery',
