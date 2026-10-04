@@ -9,6 +9,8 @@ works:
   - 鲁迅《故乡》
   - 少年讲述（海边贝壳、西瓜地）
   - 中年称呼「老爷」
+essays:
+  - runtu-second-birth
 order: 70
 ---
 

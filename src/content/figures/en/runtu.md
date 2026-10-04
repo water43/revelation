@@ -9,6 +9,8 @@ works:
   - Lu Xun, “My Old Home”
   - The boy’s telling (shells, the watermelon field)
   - The grown man’s “Master”
+essays:
+  - runtu-second-birth
 order: 70
 ---
 

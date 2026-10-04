@@ -6,20 +6,27 @@ import { t, type Locale } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
   const all = await getCollection('figures');
+  const essays = await getCollection('essays');
   return all.map((entry) => {
     const [locale, ...rest] = entry.id.split('/');
     const fileSlug = rest.join('/').replace(/\.md$/, '');
+    const slug = entry.data.slug || fileSlug;
+    const linked = essays.filter(
+      (essay) =>
+        essay.id.startsWith(`${locale}/`) &&
+        (entry.data.essays.includes(essay.data.slug) || essay.data.figure === slug),
+    );
     return {
       params: {
         locale,
-        slug: entry.data.slug || fileSlug,
+        slug,
       },
-      props: { entry, locale: locale as Locale },
+      props: { entry, locale: locale as Locale, linked },
     };
   });
 }
 
-const { entry, locale } = Astro.props;
+const { entry, locale, linked } = Astro.props;
 const { Content } = await render(entry);
 const dict = t(locale);
 const base = import.meta.env.BASE_URL;
@@ -62,6 +69,23 @@ const { data } = entry;
             <ul>
               {data.works.map((work) => (
                 <li>{work}</li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+      {
+        linked.length > 0 && (
+          <section class="thesis">
+            <h2>{dict.thesis}</h2>
+            <ul>
+              {linked.map((essay) => (
+                <li>
+                  <a class="thesis-link" href={`${base}${locale}/essays/${essay.data.slug}/`}>
+                    <span class="thesis-link-title">{essay.data.title}</span>
+                    <span class="thesis-link-summary">{essay.data.summary}</span>
+                  </a>
+                </li>
               ))}
             </ul>
           </section>

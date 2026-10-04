@@ -15,8 +15,24 @@ const figures = defineCollection({
     categories: z.array(z.enum(['literary', 'philosopher', 'religion', 'engineer', 'folk'])),
     summary: z.string(),
     works: z.array(z.string()).default([]),
+    essays: z.array(z.string()).default([]),
     order: z.number().default(100),
   }),
 });
 
-export const collections = { figures };
+const essays = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/essays',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+  schema: z.object({
+    slug: z.string(),
+    title: z.string(),
+    titleAlt: z.string(),
+    summary: z.string(),
+    figure: z.string(),
+  }),
+});
+
+export const collections = { figures, essays };
