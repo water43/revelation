@@ -4,15 +4,15 @@ name: Thomas Edison
 nameAlt: 托马斯·爱迪生
 era: 1847–1931
 categories: [engineer]
-summary: Engineer and lab manager who organized invention into R&D, product, patent, factory, and market—not a single flash of genius alone.
+summary: American inventor and businessman with a vast patent record; major contributions to electric light and power, the phonograph, and motion-picture technology.
 works:
-  - Electric lighting systems
+  - Practical electric lighting and power distribution
   - Phonograph
-  - Motion-picture devices
+  - Motion-picture camera and related devices
   - Menlo Park laboratory
 order: 75
 ---
 
-Edison’s lasting strength was less any single gadget than an early R&D organization: experiment, engineering, product, patent, factory, and market linked into a runnable chain.
+Thomas Alva Edison was a renowned American inventor and entrepreneur. He held more than a thousand patents; landmark work includes practical incandescent lighting and related power distribution, the phonograph, and key advances in motion-picture technology. At Menlo Park and later labs he organized invention as collaborative research and development.
 
-If Newton is the type who discovers laws of nature, Edison is the type who makes things work and enter the world. That engineer’s temperament runs through technical commercialization, lab management, and scaled innovation.
+Edison linked technical invention to commercial deployment and helped shape early electric lighting and consumer electronics. He is often seen as a classic inventor-entrepreneur of the late Industrial Revolution, and his methods and patent strategies remain central topics in the history of technology.

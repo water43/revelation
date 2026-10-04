@@ -4,7 +4,7 @@ name: Isambard Kingdom Brunel
 nameAlt: 伊桑巴德·金德姆·布鲁内尔
 era: 1806–1859
 categories: [engineer]
-summary: A defining engineer of the Industrial Revolution who turned railways, bridges, tunnels, and ships into working mega-systems.
+summary: British Victorian civil and mechanical engineer, known for the Great Western Railway, bridges, tunnels, and ocean steamships.
 works:
   - Great Western Railway
   - Clifton Suspension Bridge
@@ -13,6 +13,6 @@ works:
 order: 70
 ---
 
-Brunel did not change the world primarily by writing papers; he took enormous real-world problems apart and built them into infrastructure. Railways, bridges, tunnels, docks, and giant steamships became a connected network under his hand.
+Isambard Kingdom Brunel was one of the most important British engineers of the nineteenth century. He planned and built much of the Great Western Railway and left landmark works such as the Clifton Suspension Bridge, the Thames Tunnel, and ocean steamships including the *Great Eastern*.
 
-His temperament was close to: give me a hard physical problem, and I will organize it into an engineering system that actually runs—an impulse that still echoes in industrial systems and large-scale software delivery.
+His career spanned railways, bridges, tunnels, and ships, embodying the combined civil and mechanical engineering of the Industrial Revolution. He is widely regarded as a defining figure of Victorian engineering achievement.

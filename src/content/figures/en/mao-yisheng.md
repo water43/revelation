@@ -4,15 +4,15 @@ name: Mao Yisheng
 nameAlt: 茅以升
 era: 1896–1989
 categories: [engineer]
-summary: A leading figure of modern Chinese bridge engineering—mechanics made into major works, plus engineering education and technical leadership.
+summary: Chinese bridge engineer and educator who led the Qiantang River Bridge and advanced bridge engineering research and higher technical education.
 works:
   - Qiantang River Bridge
-  - Bridge engineering practice
-  - Engineering education
-  - Building China’s bridge industry
+  - Bridge engineering research
+  - Writings on Chinese bridge history
+  - Engineering higher education
 order: 90
 ---
 
-Mao Yisheng followed a path from mathematics and mechanics to large-scale engineering, education, and technical management. He led works such as the Qiantang River Bridge and helped organize engineering schools and the bridge industry.
+Mao Yisheng was a leading Chinese bridge engineer and educator. After doctoral study in the United States he returned to teach and practice bridge engineering. In the 1930s he directed the design and construction of the Qiantang River Bridge, the first modern combined rail-and-road bridge designed and built by Chinese engineers—an event of major historical importance.
 
-Unlike a purely “engineering over humanities” type, he also had deep classical and literary cultivation—yet he remains someone who built complex structures and folded engineering knowledge into institutions.
+After 1949 he continued to work in bridge engineering and education, holding senior posts in universities and academic institutions. He played a prominent role in modern Chinese bridge building and in training engineering talent.
