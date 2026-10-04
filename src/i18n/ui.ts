@@ -47,6 +47,16 @@ export const ui = {
         ],
       },
       {
+        image: 'home/donne-1.jpg',
+        attribution: '约翰·多恩 ·《神圣十四行诗》',
+        lines: [
+          '三位一体之神，击打我的心吧；你至今还只是敲打、吹拂、普照，试图修补；',
+          '好让我站起，愿你推倒我，弯下你的力量，打碎、吹散、焚烧，使我焕然一新。',
+          '我像一座被僭夺的城池，本该属你，苦苦想接纳你，却终无结果。理性，你在我心中的总督，本应保卫我，却成了俘虏，显得软弱或不忠。',
+          '然而我深深爱你，也渴望被你所爱，但我已许配给你的仇敌：求你离异我，解开或再次斩断那结，把我囚进你怀——因除非你迷住我，我永不得自由；除非你强夺我，我永不得纯洁。',
+        ],
+      },
+      {
         image: 'home/gitanjali-2.png',
         attribution: '泰戈尔 ·《吉檀迦利》',
         lines: [
@@ -67,13 +77,14 @@ export const ui = {
         ],
       },
       {
-        image: 'home/donne-1.jpg',
-        attribution: '约翰·多恩 ·《神圣十四行诗》',
+        image: 'portraits/eliot.jpg',
+        attribution: '艾略特 ·《四个四重奏》',
         lines: [
-          '三位一体之神，击打我的心吧；你至今还只是敲打、吹拂、普照，试图修补；',
-          '好让我站起，愿你推倒我，弯下你的力量，打碎、吹散、焚烧，使我焕然一新。',
-          '我像一座被僭夺的城池，本该属你，苦苦想接纳你，却终无结果。理性，你在我心中的总督，本应保卫我，却成了俘虏，显得软弱或不忠。',
-          '然而我深深爱你，也渴望被你所爱，但我已许配给你的仇敌：求你离异我，解开或再次斩断那结，把我囚进你怀——因除非你迷住我，我永不得自由；除非你强夺我，我永不得纯洁。',
+          '虽然道对所有人都是共同的，但大多数人活着，仿佛每个人对此都有自己独特的理解。',
+          '向上的路和向下的路是一样的。——赫拉克利特',
+          '时间现在和时间过去也许都存在于时间将来，时间将来包容于时间过去。',
+          '如果时间永远都是现在，所有的时间都不能得到拯救。',
+          '那本来可能发生的事是一种抽象，始终只是在一个思辨的世界中一种永恒的可能性。',
         ],
       },
     ] satisfies PoemSlide[],
@@ -116,6 +127,16 @@ export const ui = {
         ],
       },
       {
+        image: 'home/donne-1.jpg',
+        attribution: 'John Donne · Holy Sonnets',
+        lines: [
+          'Batter my heart, three-person’d God; for you as yet but knock, breathe, shine, and seek to mend;',
+          'That I may rise, and stand, o’erthrow me, and bend your force, to break, blow, burn, and make me new.',
+          'I, like an usurp’d town, to another due, labour to admit you, but Oh, to no end. Reason, your viceroy in me, me should defend, but is captived, and proves weak or untrue.',
+          'Yet dearly I love you, and would be loved fain, but am betroth’d unto your enemy: divorce me, untie or break that knot again, take me to you, imprison me, for I, except you enthrall me, never shall be free, nor ever chaste, except you ravish me.',
+        ],
+      },
+      {
         image: 'home/gitanjali-2.png',
         attribution: 'Tagore · Gitanjali',
         lines: [
@@ -136,13 +157,14 @@ export const ui = {
         ],
       },
       {
-        image: 'home/donne-1.jpg',
-        attribution: 'John Donne · Holy Sonnets',
+        image: 'portraits/eliot.jpg',
+        attribution: 'T. S. Eliot · Four Quartets',
         lines: [
-          'Batter my heart, three-person’d God; for you as yet but knock, breathe, shine, and seek to mend;',
-          'That I may rise, and stand, o’erthrow me, and bend your force, to break, blow, burn, and make me new.',
-          'I, like an usurp’d town, to another due, labour to admit you, but Oh, to no end. Reason, your viceroy in me, me should defend, but is captived, and proves weak or untrue.',
-          'Yet dearly I love you, and would be loved fain, but am betroth’d unto your enemy: divorce me, untie or break that knot again, take me to you, imprison me, for I, except you enthrall me, never shall be free, nor ever chaste, except you ravish me.',
+          'Although the Word is common to all, most people live as if they had a wisdom of their own.',
+          'The way up and the way down are one and the same. — Heraclitus',
+          'Time present and time past are both perhaps present in time future, and time future contained in time past.',
+          'If all time is eternally present all time is unredeemable.',
+          'What might have been is an abstraction remaining a perpetual possibility only in a world of speculation.',
         ],
       },
     ] satisfies PoemSlide[],
