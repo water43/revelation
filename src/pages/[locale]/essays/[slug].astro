@@ -31,11 +31,14 @@ const { data } = entry;
   title={data.title}
   description={data.summary}
   langSwitchHref={`${base}${other}/essays/${data.slug}/`}
-  currentPath="figures"
+  currentPath="essay"
 >
   <a class="back-link" href={`${base}${locale}/figures/${data.figure}/`}>← {dict.backToFigure}</a>
   <article class="essay">
-    <p class="essay-kicker">{dict.thesis}</p>
+    <div class="essay-toolbar">
+      <p class="essay-kicker">{dict.thesis}</p>
+      <button type="button" class="essay-export" data-export-pdf>{dict.exportPdf}</button>
+    </div>
     <h1>{data.title}</h1>
     <p class="essay-alt">{data.titleAlt}</p>
     <p class="essay-lead">{data.summary}</p>
@@ -44,3 +47,9 @@ const { data } = entry;
     </div>
   </article>
 </BaseLayout>
+
+<script>
+  document.querySelector('[data-export-pdf]')?.addEventListener('click', () => {
+    window.print();
+  });
+</script>

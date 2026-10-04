@@ -7,7 +7,7 @@ interface Props {
   title?: string;
   description?: string;
   langSwitchHref: string;
-  currentPath?: 'home' | 'figures';
+  currentPath?: 'home' | 'figures' | 'essay';
 }
 
 const { locale, title, description, langSwitchHref, currentPath } = Astro.props;
@@ -15,10 +15,11 @@ const dict = t(locale);
 const pageTitle = title ? `${title} · ${dict.brand}` : dict.brand;
 const base = import.meta.env.BASE_URL;
 const isHome = currentPath === 'home';
+const isEssay = currentPath === 'essay';
 ---
 
 <!doctype html>
-<html lang={locale} class:list={[{ 'page-home': isHome }]}>
+<html lang={locale} class:list={[{ 'page-home': isHome, 'page-essay': isEssay }]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
