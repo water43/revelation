@@ -809,46 +809,114 @@ html.page-home .site-main--home {
 /* Detail */
 .detail {
   display: grid;
-  gap: 2rem;
-  padding-top: 1.5rem;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.9rem 1rem;
+  padding-top: 0.35rem;
   animation: rise 0.75s ease both;
+  align-items: center;
+}
+
+.detail-portrait {
+  grid-column: 1;
+  grid-row: 1;
+  position: static;
+}
+
+.detail-intro {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.detail-main {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.detail-intro h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 6.5vw, 2rem);
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.detail-intro .alt {
+  color: var(--ink-mute);
+  margin: 0 0 0.4rem;
+  font-size: 0.92rem;
+}
+
+.detail-intro .era {
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
+}
+
+.detail-intro .tags {
+  margin-top: 0;
+}
+
+.detail-body {
+  margin-top: 0.35rem;
+}
+
+.detail-body :global(h2:first-child) {
+  margin-top: 0;
+}
+
+.detail-portrait .portrait span {
+  font-size: 2.2rem;
 }
 
 @media (min-width: 800px) {
   .detail {
     grid-template-columns: 240px 1fr;
-    gap: 3rem;
+    gap: 1.5rem 3rem;
     align-items: start;
+    padding-top: 1.5rem;
   }
-}
 
-.detail-portrait {
-  position: sticky;
-  top: 1.5rem;
-}
+  .detail-portrait {
+    position: sticky;
+    top: 1.5rem;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
 
-.detail-meta h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin: 0 0 0.35rem;
-  font-weight: 700;
-  line-height: 1.15;
-}
+  .detail-intro,
+  .detail-main {
+    grid-column: 2;
+    grid-row: auto;
+  }
 
-.detail-meta .alt {
-  color: var(--ink-mute);
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
-}
+  .detail-intro h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 0.35rem;
+  }
 
-.detail-meta .era {
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  margin: 0 0 1rem;
-}
+  .detail-intro .alt {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+  }
 
-.detail-body {
-  margin-top: 1.75rem;
+  .detail-intro .era {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+
+  .detail-intro .tags {
+    margin-top: 1rem;
+  }
+
+  .detail-body {
+    margin-top: 1.75rem;
+  }
+
+  .detail-portrait .portrait span {
+    font-size: 4.5rem;
+  }
 }
 
 .detail-body :global(p) {
@@ -936,10 +1004,6 @@ html.page-home .site-main--home {
   letter-spacing: 0.08em;
   color: var(--ink);
   opacity: 0.7;
-}
-
-.detail-portrait .portrait span {
-  font-size: 4.5rem;
 }
 
 @keyframes rise {

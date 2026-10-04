@@ -39,7 +39,7 @@ const { data } = entry;
     <div class="detail-portrait">
       <Portrait name={data.name} slug={data.slug} large />
     </div>
-    <div class="detail-meta">
+    <div class="detail-intro">
       <h1>{data.name}</h1>
       <p class="alt">{data.nameAlt}</p>
       <p class="era">{data.era}</p>
@@ -50,6 +50,8 @@ const { data } = entry;
           ))
         }
       </div>
+    </div>
+    <div class="detail-main">
       <div class="detail-body">
         <Content />
       </div>
