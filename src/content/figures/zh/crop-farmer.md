@@ -4,6 +4,7 @@ name: 种植农民
 nameAlt: Crop Farmer
 era: 约前工业至近代
 categories: [folk]
+varnas: [vaishya]
 summary: 田里种粮的人把收成押在节气与土上；突破点在品种、灌溉与可交接的地块信息，而不是再多出一年苦力。
 works:
   - 耕耙播种

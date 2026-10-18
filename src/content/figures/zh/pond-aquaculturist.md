@@ -4,6 +4,7 @@ name: 塘养渔户
 nameAlt: Pond Aquaculturist
 era: 约前工业至近代
 categories: [folk]
+varnas: [vaishya]
 summary: 塘里养鱼虾蟹的人把收成押在水质与密度上；突破点在监测、分塘与可规格化的出塘信息，而不是再多挖一口塘。
 works:
   - 清塘投苗

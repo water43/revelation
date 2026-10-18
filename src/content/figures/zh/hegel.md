@@ -4,6 +4,7 @@ name: 格奥尔格·威廉·弗里德里希·黑格尔
 nameAlt: Georg Wilhelm Friedrich Hegel
 era: 1770–1831
 categories: [philosopher]
+varnas: [brahmin]
 summary: 德意志观念论集大成者，以辩证法与精神现象学描述意识、历史与绝对精神的展开。
 works:
   - 精神现象学

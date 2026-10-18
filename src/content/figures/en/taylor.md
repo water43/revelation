@@ -4,6 +4,7 @@ name: Frederick Winslow Taylor
 nameAlt: 弗雷德里克·温斯洛·泰勒
 era: 1856–1915
 categories: [engineer]
+varnas: [brahmin, kshatriya]
 summary: American mechanical engineer and management theorist; a principal founder of scientific management, with lasting impact on industrial engineering.
 works:
   - The Principles of Scientific Management

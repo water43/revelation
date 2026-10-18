@@ -4,6 +4,7 @@ name: 伊曼努尔·康德
 nameAlt: Immanuel Kant
 era: 1724–1804
 categories: [philosopher]
+varnas: [brahmin]
 summary: 德意志古典哲学的奠基者，以批判哲学追问认识、道德与审美的先天条件，深刻改写了现代思想版图。
 works:
   - 纯粹理性批判

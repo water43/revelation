@@ -4,6 +4,7 @@ name: John Donne
 nameAlt: 约翰·多恩
 era: 1572–1631
 categories: [literary, religion]
+varnas: [brahmin]
 summary: Leading Metaphysical poet of England, known for the Holy Sonnets and love poems that fuse body, faith, and paradox.
 works:
   - Holy Sonnets

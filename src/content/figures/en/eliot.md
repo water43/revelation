@@ -4,6 +4,7 @@ name: T. S. Eliot
 nameAlt: T. S. 艾略特
 era: 1888–1965
 categories: [literary]
+varnas: [brahmin]
 summary: A central voice of Anglo-American modernist poetry; The Waste Land and Four Quartets reshaped the sound and form of twentieth-century English verse.
 works:
   - The Love Song of J. Alfred Prufrock

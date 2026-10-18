@@ -4,6 +4,7 @@ name: 纽海文鱼妇
 nameAlt: Newhaven Fishwife
 era: 约 18–19 世纪
 categories: [folk]
+varnas: [shudra]
 summary: 渔村卖鱼人停在运输转售；突破点在共享冷链、产地加工与订单信息，而不是继续加长倒卖路程。
 works:
   - 进城叫卖

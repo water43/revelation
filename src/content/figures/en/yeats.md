@@ -4,6 +4,7 @@ name: William Butler Yeats
 nameAlt: 威廉·巴特勒·叶芝
 era: 1865–1939
 categories: [literary]
+varnas: [brahmin]
 summary: Irish poet and dramatist; a bridge between symbolism and modernism, and Nobel laureate in 1923.
 works:
   - When You Are Old

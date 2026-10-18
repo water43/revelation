@@ -4,6 +4,7 @@ name: 伊桑巴德·金德姆·布鲁内尔
 nameAlt: Isambard Kingdom Brunel
 era: 1806–1859
 categories: [engineer]
+varnas: [vaishya]
 summary: 英国维多利亚时代土木与机械工程师，以大西部铁路、桥梁、隧道与远洋蒸汽船等工程闻名。
 works:
   - 大西部铁路

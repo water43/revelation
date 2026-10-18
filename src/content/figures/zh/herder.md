@@ -4,6 +4,7 @@ name: 牧人
 nameAlt: Herder
 era: 约前工业至近代
 categories: [folk]
+varnas: [vaishya]
 summary: 放牛羊的人把日子押在草场与转场上；突破点在草畜平衡、防疫与可追溯出栏，而不是再多赶一程无草的路。
 works:
   - 转场放牧

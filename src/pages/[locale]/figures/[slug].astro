@@ -52,6 +52,11 @@ const { data } = entry;
       <p class="era">{data.era}</p>
       <div class="tags">
         {
+          data.varnas.map((v) => (
+            <span class="tag tag-varna">{dict.varnas[v] ?? v}</span>
+          ))
+        }
+        {
           data.categories.map((cat) => (
             <span class="tag">{dict.categories[cat] ?? cat}</span>
           ))

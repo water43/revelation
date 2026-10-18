@@ -4,6 +4,7 @@ name: Qian Xuesen
 nameAlt: 钱学森
 era: 1911–2009
 categories: [engineer]
+varnas: [brahmin, kshatriya]
 summary: Chinese scientist in aerodynamics and engineering cybernetics; a founding figure of China’s missile and space programs, and an advocate of systems engineering.
 works:
   - Engineering Cybernetics

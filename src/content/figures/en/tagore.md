@@ -4,6 +4,7 @@ name: Rabindranath Tagore
 nameAlt: 罗宾德拉纳特·泰戈尔
 era: 1861–1941
 categories: [literary]
+varnas: [brahmin]
 summary: Indian poet, writer, and thinker; the first Asian Nobel laureate in literature, renowned for Gitanjali.
 works:
   - Gitanjali

@@ -4,6 +4,7 @@ name: 弗雷德里克·温斯洛·泰勒
 nameAlt: Frederick Winslow Taylor
 era: 1856–1915
 categories: [engineer]
+varnas: [brahmin, kshatriya]
 summary: 美国机械工程师与管理学家，科学管理理论的主要奠基人，对现代工业工程与工厂管理影响深远。
 works:
   - 科学管理原理

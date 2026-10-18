@@ -4,6 +4,7 @@ name: 弗里德里希·尼采
 nameAlt: Friedrich Nietzsche
 era: 1844–1900
 categories: [philosopher]
+varnas: [brahmin]
 summary: 以诗性与批判的笔触重估价值，提出权力意志、永恒轮回与「上帝已死」，深刻影响二十世纪思想与文学。
 works:
   - 悲剧的诞生

@@ -4,6 +4,7 @@ name: 畜禽饲养人
 nameAlt: Livestock Raiser
 era: 约前工业至近代
 categories: [folk]
+varnas: [vaishya]
 summary: 养猪养鸡养鸭养鹅的人把日子押在饲料与疫病上；突破点在防疫、批次与可计价的出栏信息，而不是再多添几圈牲口。
 works:
   - 圈养饲喂

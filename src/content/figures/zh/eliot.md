@@ -4,6 +4,7 @@ name: T. S. 艾略特
 nameAlt: T. S. Eliot
 era: 1888–1965
 categories: [literary]
+varnas: [brahmin]
 summary: 英美现代主义诗歌的核心人物，以《荒原》《四个四重奏》等作品重塑二十世纪英语诗的声音与形式。
 works:
   - 普鲁弗洛克的情歌

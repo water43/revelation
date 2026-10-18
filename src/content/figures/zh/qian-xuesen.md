@@ -4,6 +4,7 @@ name: 钱学森
 nameAlt: Qian Xuesen
 era: 1911–2009
 categories: [engineer]
+varnas: [brahmin, kshatriya]
 summary: 中国科学家，空气动力学与工程控制论重要人物，为中国航天与导弹事业作出奠基性贡献，并倡导系统工程。
 works:
   - 工程控制论

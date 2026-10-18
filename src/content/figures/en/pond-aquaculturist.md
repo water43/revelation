@@ -4,6 +4,7 @@ name: Pond Aquaculturist
 nameAlt: 塘养渔户
 era: c. pre-industrial to modern
 categories: [folk]
+varnas: [vaishya]
 summary: The pond keeper of fish, shrimp, and crab stakes the crop on water and density; the way out is monitoring, split ponds, and sized exit data—not another dug pond.
 works:
   - Clearing and stocking

@@ -4,6 +4,7 @@ name: Parmenides
 nameAlt: 巴门尼德
 era: c. 515–450 BCE
 categories: [philosopher]
+varnas: [brahmin]
 summary: Pre-Socratic philosopher who argued that true Being is one, eternal, and unchanging, founding a lasting tradition of ontology and rational argument.
 works:
   - On Nature (fragments)

@@ -4,6 +4,7 @@ name: 威廉·巴特勒·叶芝
 nameAlt: William Butler Yeats
 era: 1865–1939
 categories: [literary]
+varnas: [brahmin]
 summary: 爱尔兰诗人与剧作家，象征主义与现代主义的桥梁人物，1923 年诺贝尔文学奖得主。
 works:
   - 当你老了

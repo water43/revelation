@@ -4,6 +4,7 @@ name: Isambard Kingdom Brunel
 nameAlt: 伊桑巴德·金德姆·布鲁内尔
 era: 1806–1859
 categories: [engineer]
+varnas: [vaishya]
 summary: British Victorian civil and mechanical engineer, known for the Great Western Railway, bridges, tunnels, and ocean steamships.
 works:
   - Great Western Railway

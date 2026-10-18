@@ -692,6 +692,21 @@ html.page-home .site-main--home {
   margin: 1.5rem 0 2rem;
 }
 
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  margin-right: 0.15rem;
+}
+
 .filter-chip {
   border: 1px solid var(--line);
   background: transparent;
@@ -709,6 +724,13 @@ html.page-home .site-main--home {
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
+}
+
+.filter-chip-varna.is-active,
+.filter-chip-varna:hover {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--paper);
 }
 
 .search-input {
@@ -892,6 +914,12 @@ html.page-home .site-main--home {
   color: var(--forest);
   border: 1px solid rgba(47, 74, 60, 0.25);
   padding: 0.15rem 0.45rem;
+}
+
+.tag-varna {
+  color: var(--ink);
+  border-color: rgba(28, 28, 26, 0.28);
+  background: rgba(28, 28, 26, 0.04);
 }
 
 .empty {

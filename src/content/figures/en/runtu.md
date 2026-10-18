@@ -4,6 +4,7 @@ name: Runtu
 nameAlt: 闰土
 era: Late Qing to early Republic
 categories: [folk]
+varnas: [shudra]
 summary: "Laboring life trains little school-style speculation; Lu Xun’s Runtu is a boy who could already tell, worn down by survival and rank—not a villager who never learned to think."
 works:
   - Lu Xun, “My Old Home”

@@ -19,6 +19,7 @@ const figures = all
   .sort((a, b) => a.data.order - b.data.order);
 
 const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk'] as const;
+const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
 ---
 
 <BaseLayout
@@ -33,14 +34,27 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
   </div>
 
   <div class="filters" data-filters>
-    <button type="button" class="filter-chip is-active" data-category="all">{dict.all}</button>
-    {
-      categoryKeys.map((key) => (
-        <button type="button" class="filter-chip" data-category={key}>
-          {dict.categories[key]}
-        </button>
-      ))
-    }
+    <div class="filter-row" role="group" aria-label={dict.figures}>
+      <button type="button" class="filter-chip is-active" data-category="all">{dict.all}</button>
+      {
+        categoryKeys.map((key) => (
+          <button type="button" class="filter-chip" data-category={key}>
+            {dict.categories[key]}
+          </button>
+        ))
+      }
+    </div>
+    <div class="filter-row" role="group" aria-label={dict.varnaLabel}>
+      <span class="filter-label">{dict.varnaLabel}</span>
+      <button type="button" class="filter-chip is-active" data-varna="all">{dict.all}</button>
+      {
+        varnaKeys.map((key) => (
+          <button type="button" class="filter-chip filter-chip-varna" data-varna={key}>
+            {dict.varnas[key]}
+          </button>
+        ))
+      }
+    </div>
     <input
       class="search-input"
       type="search"
@@ -61,6 +75,7 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
           data-figure-item
           data-name={`${figure.data.name} ${figure.data.nameAlt}`.toLowerCase()}
           data-categories={figure.data.categories.join(',')}
+          data-varnas={figure.data.varnas.join(',')}
         >
           <FigureCard
             locale={locale}
@@ -71,6 +86,7 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
             era={figure.data.era}
             summary={figure.data.summary}
             categories={figure.data.categories}
+            varnas={figure.data.varnas}
           />
         </li>
       ))
@@ -87,6 +103,7 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
   const search = document.querySelector<HTMLInputElement>('[data-search]');
   const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view]'));
   let activeCategory = 'all';
+  let activeVarna = 'all';
   const storageKey = 'revelation-figure-view';
 
   function applyFilters() {
@@ -94,10 +111,12 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
     let visible = 0;
     for (const item of items) {
       const cats = (item.dataset.categories || '').split(',');
+      const varnas = (item.dataset.varnas || '').split(',');
       const name = item.dataset.name || '';
       const catOk = activeCategory === 'all' || cats.includes(activeCategory);
+      const varnaOk = activeVarna === 'all' || varnas.includes(activeVarna);
       const qOk = !q || name.includes(q);
-      const show = catOk && qOk;
+      const show = catOk && varnaOk && qOk;
       item.hidden = !show;
       if (show) visible += 1;
     }
@@ -122,7 +141,16 @@ const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk']
   root?.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((btn) => {
     btn.addEventListener('click', () => {
       activeCategory = btn.dataset.category || 'all';
-      root.querySelectorAll('.filter-chip').forEach((el) => el.classList.remove('is-active'));
+      root.querySelectorAll('[data-category]').forEach((el) => el.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      applyFilters();
+    });
+  });
+
+  root?.querySelectorAll<HTMLButtonElement>('[data-varna]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeVarna = btn.dataset.varna || 'all';
+      root.querySelectorAll('[data-varna]').forEach((el) => el.classList.remove('is-active'));
       btn.classList.add('is-active');
       applyFilters();
     });

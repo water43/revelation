@@ -4,6 +4,7 @@ name: Georg Wilhelm Friedrich Hegel
 nameAlt: 格奥尔格·威廉·弗里德里希·黑格尔
 era: 1770–1831
 categories: [philosopher]
+varnas: [brahmin]
 summary: Culminating figure of German Idealism; he used dialectic and the phenomenology of spirit to describe the unfolding of consciousness, history, and absolute Spirit.
 works:
   - Phenomenology of Spirit

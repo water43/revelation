@@ -4,6 +4,7 @@ name: 约翰·多恩
 nameAlt: John Donne
 era: 1572–1631
 categories: [literary, religion]
+varnas: [brahmin]
 summary: 英国玄学派诗歌的代表人物，以《神圣十四行诗》与情诗著称，把身体、信仰与悖论熔于一炉。
 works:
   - 神圣十四行诗

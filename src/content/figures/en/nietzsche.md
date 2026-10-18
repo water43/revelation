@@ -4,6 +4,7 @@ name: Friedrich Nietzsche
 nameAlt: 弗里德里希·尼采
 era: 1844–1900
 categories: [philosopher]
+varnas: [brahmin]
 summary: He revalued values in a poetic and critical voice, proposing will to power, eternal recurrence, and “God is dead,” shaping twentieth-century thought and literature.
 works:
   - The Birth of Tragedy

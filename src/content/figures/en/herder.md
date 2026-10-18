@@ -4,6 +4,7 @@ name: Herder
 nameAlt: 牧人
 era: c. pre-industrial to modern
 categories: [folk]
+varnas: [vaishya]
 summary: The herder of cattle and sheep stakes the household on pasture and moves; the way out is stocking balance, biosecurity, and traceable exit—not another trek to bare ground.
 works:
   - Seasonal moves

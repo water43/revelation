@@ -4,6 +4,7 @@ name: 托马斯·爱迪生
 nameAlt: Thomas Edison
 era: 1847–1931
 categories: [engineer]
+varnas: [vaishya]
 summary: 美国发明家与企业家，拥有大量专利，在电灯、电力系统、留声机与电影技术等领域贡献卓著。
 works:
   - 实用电灯与配电系统
