@@ -24,6 +24,7 @@ export const ui = {
       religion: '宗教',
       engineer: '工程',
       folk: '民间',
+      decision: '决策',
     } as Record<string, string>,
     varnaLabel: '种姓',
     varnas: {
@@ -118,6 +119,7 @@ export const ui = {
       religion: 'Religion',
       engineer: 'Engineer',
       folk: 'Folk',
+      decision: 'Decision',
     } as Record<string, string>,
     varnaLabel: 'Varna',
     varnas: {

@@ -12,7 +12,9 @@ const figures = defineCollection({
     name: z.string(),
     nameAlt: z.string(),
     era: z.string(),
-    categories: z.array(z.enum(['literary', 'philosopher', 'religion', 'engineer', 'folk'])),
+    categories: z.array(
+      z.enum(['literary', 'philosopher', 'religion', 'engineer', 'folk', 'decision']),
+    ),
     /** Fixed universal estate tags from the classical varna scheme. */
     varnas: z
       .array(z.enum(['brahmin', 'kshatriya', 'vaishya', 'shudra']))

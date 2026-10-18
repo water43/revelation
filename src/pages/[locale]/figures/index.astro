@@ -18,7 +18,14 @@ const figures = all
   .filter((entry) => entry.id.startsWith(`${locale}/`))
   .sort((a, b) => a.data.order - b.data.order);
 
-const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk'] as const;
+const categoryKeys = [
+  'literary',
+  'philosopher',
+  'religion',
+  'engineer',
+  'folk',
+  'decision',
+] as const;
 const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
 const totalCount = figures.length;
 ---
