@@ -20,6 +20,7 @@ const figures = all
 
 const categoryKeys = ['literary', 'philosopher', 'religion', 'engineer', 'folk'] as const;
 const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
+const totalCount = figures.length;
 ---
 
 <BaseLayout
@@ -33,40 +34,75 @@ const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
     <h1>{dict.figures}</h1>
   </div>
 
-  <div class="filters" data-filters>
-    <div class="filter-row" role="group" aria-label={dict.figures}>
-      <button type="button" class="filter-chip is-active" data-category="all">{dict.all}</button>
-      {
-        categoryKeys.map((key) => (
-          <button type="button" class="filter-chip" data-category={key}>
-            {dict.categories[key]}
+  <aside
+    class="filter-panel"
+    data-filters
+    data-result-template={dict.resultCount}
+    data-total={totalCount}
+  >
+    <div class="filter-toolbar">
+      <label class="filter-search">
+        <span class="visually-hidden">{dict.searchPlaceholder}</span>
+        <input
+          class="search-input"
+          type="search"
+          data-search
+          placeholder={dict.searchPlaceholder}
+          autocomplete="off"
+        />
+      </label>
+      <div class="filter-toolbar-meta">
+        <p class="filter-count" data-result-count aria-live="polite">
+          {dict.resultCount.replace('{n}', String(totalCount))}
+        </p>
+        <button type="button" class="filter-clear" data-clear hidden>
+          {dict.clearFilters}
+        </button>
+        <div class="view-toggle" role="group" aria-label={dict.viewLabel}>
+          <button type="button" class="view-btn is-active" data-view="card" aria-pressed="true">
+            {dict.viewCard}
           </button>
-        ))
-      }
-    </div>
-    <div class="filter-row" role="group" aria-label={dict.varnaLabel}>
-      <span class="filter-label">{dict.varnaLabel}</span>
-      <button type="button" class="filter-chip is-active" data-varna="all">{dict.all}</button>
-      {
-        varnaKeys.map((key) => (
-          <button type="button" class="filter-chip filter-chip-varna" data-varna={key}>
-            {dict.varnas[key]}
+          <button type="button" class="view-btn" data-view="list" aria-pressed="false">
+            {dict.viewList}
           </button>
-        ))
-      }
+        </div>
+      </div>
     </div>
-    <input
-      class="search-input"
-      type="search"
-      data-search
-      placeholder={dict.searchPlaceholder}
-      aria-label={dict.searchPlaceholder}
-    />
-    <div class="view-toggle" role="group" aria-label={dict.viewLabel}>
-      <button type="button" class="view-btn is-active" data-view="card" aria-pressed="true">{dict.viewCard}</button>
-      <button type="button" class="view-btn" data-view="list" aria-pressed="false">{dict.viewList}</button>
+
+    <div class="filter-dims">
+      <div class="filter-dim" role="group" aria-label={dict.categoryLabel}>
+        <span class="filter-dim-label">{dict.categoryLabel}</span>
+        <div class="filter-seg">
+          <button type="button" class="filter-chip is-active" data-category="all">
+            {dict.unspecified}
+          </button>
+          {
+            categoryKeys.map((key) => (
+              <button type="button" class="filter-chip" data-category={key}>
+                {dict.categories[key]}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="filter-dim" role="group" aria-label={dict.varnaLabel}>
+        <span class="filter-dim-label">{dict.varnaLabel}</span>
+        <div class="filter-seg">
+          <button type="button" class="filter-chip is-active" data-varna="all">
+            {dict.unspecified}
+          </button>
+          {
+            varnaKeys.map((key) => (
+              <button type="button" class="filter-chip filter-chip-varna" data-varna={key}>
+                {dict.varnas[key]}
+              </button>
+            ))
+          }
+        </div>
+      </div>
     </div>
-  </div>
+  </aside>
 
   <ul class="figure-grid" data-figure-grid data-view="card">
     {
@@ -96,15 +132,28 @@ const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
 </BaseLayout>
 
 <script>
-  const root = document.querySelector('[data-filters]');
+  const root = document.querySelector<HTMLElement>('[data-filters]');
   const grid = document.querySelector<HTMLElement>('[data-figure-grid]');
   const items = Array.from(document.querySelectorAll<HTMLElement>('[data-figure-item]'));
   const empty = document.querySelector<HTMLElement>('[data-empty]');
   const search = document.querySelector<HTMLInputElement>('[data-search]');
+  const countEl = document.querySelector<HTMLElement>('[data-result-count]');
+  const clearBtn = document.querySelector<HTMLButtonElement>('[data-clear]');
   const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view]'));
   let activeCategory = 'all';
   let activeVarna = 'all';
   const storageKey = 'revelation-figure-view';
+  const resultTemplate = root?.dataset.resultTemplate || '{n}';
+
+  function setActive(group: string, value: string) {
+    if (!root) return;
+    root.querySelectorAll(`[data-${group}]`).forEach((el) => {
+      const btn = el as HTMLElement;
+      const on = (btn.dataset[group] || '') === value;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
 
   function applyFilters() {
     const q = (search?.value || '').trim().toLowerCase();
@@ -118,9 +167,23 @@ const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
       const qOk = !q || name.includes(q);
       const show = catOk && varnaOk && qOk;
       item.hidden = !show;
+      item.classList.toggle('is-filtered-out', !show);
       if (show) visible += 1;
     }
     if (empty) empty.hidden = visible > 0;
+    if (countEl) countEl.textContent = resultTemplate.replace('{n}', String(visible));
+    const filtered = activeCategory !== 'all' || activeVarna !== 'all' || Boolean(q);
+    if (clearBtn) clearBtn.hidden = !filtered;
+    root?.classList.toggle('has-filter', filtered);
+  }
+
+  function clearFilters() {
+    activeCategory = 'all';
+    activeVarna = 'all';
+    if (search) search.value = '';
+    setActive('category', 'all');
+    setActive('varna', 'all');
+    applyFilters();
   }
 
   function setView(view: string) {
@@ -140,27 +203,33 @@ const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
 
   root?.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      activeCategory = btn.dataset.category || 'all';
-      root.querySelectorAll('[data-category]').forEach((el) => el.classList.remove('is-active'));
-      btn.classList.add('is-active');
+      const next = btn.dataset.category || 'all';
+      activeCategory = activeCategory === next && next !== 'all' ? 'all' : next;
+      setActive('category', activeCategory);
       applyFilters();
     });
   });
 
   root?.querySelectorAll<HTMLButtonElement>('[data-varna]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      activeVarna = btn.dataset.varna || 'all';
-      root.querySelectorAll('[data-varna]').forEach((el) => el.classList.remove('is-active'));
-      btn.classList.add('is-active');
+      const next = btn.dataset.varna || 'all';
+      activeVarna = activeVarna === next && next !== 'all' ? 'all' : next;
+      setActive('varna', activeVarna);
       applyFilters();
     });
   });
+
+  clearBtn?.addEventListener('click', clearFilters);
 
   viewBtns.forEach((btn) => {
     btn.addEventListener('click', () => setView(btn.dataset.view || 'card'));
   });
 
   search?.addEventListener('input', applyFilters);
+
+  setActive('category', 'all');
+  setActive('varna', 'all');
+  applyFilters();
 
   try {
     const saved = localStorage.getItem(storageKey);
