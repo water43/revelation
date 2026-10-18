@@ -4,7 +4,7 @@ name: Thomas Edison
 nameAlt: 托马斯·爱迪生
 era: 1847–1931
 categories: [engineer]
-varnas: [vaishya]
+varnas: [brahmin, vaishya]
 summary: American inventor and businessman with a vast patent record; major contributions to electric light and power, the phonograph, and motion-picture technology.
 works:
   - Practical electric lighting and power distribution

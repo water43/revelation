@@ -4,7 +4,7 @@ name: Mao Yisheng
 nameAlt: 茅以升
 era: 1896–1989
 categories: [engineer]
-varnas: [vaishya]
+varnas: [brahmin, vaishya]
 summary: Chinese bridge engineer and educator who led the Qiantang River Bridge and advanced bridge engineering research and higher technical education.
 works:
   - Qiantang River Bridge
