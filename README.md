@@ -60,11 +60,16 @@ npm run preview
 ## 新增人物
 
 1. 在 `src/content/figures/zh/` 与 `en/` 各添加同名 Markdown。
-2. Frontmatter 使用相同 `slug`，并填写 `name`、`nameAlt`、`era`、`categories`、`summary`、`works`、`order`。
+2. Frontmatter 使用相同 `slug`，并填写 `name`、`nameAlt`、`era`、`categories`、`varnas`、`summary`、`works`、`order`。
 3. 肖像放入 `public/portraits/{slug}.jpg`。
-4. 正文用 Markdown 撰写简介。
+4. **正文目录用主流典型结构**（对齐数码兽图鉴式说明，勿再用「历史局限 / 个人与角色局限 / 现代化方案」等旧目录）：
+   - `### 基本资料`（时代、图件、种姓、典型职能等表）
+   - `### 设定资料`（主设定正文）
+   - `### 扩展介绍`（可选；补充能力、对照与局限）
+   - 英文对应：`### Basic profile` / `### Profile` / `### Extended notes`
 
-`categories` 可选：`literary` | `philosopher` | `religion`。
+`categories` 可选：`literary` | `philosopher` | `religion` | `engineer` | `folk` | `decision`。  
+`varnas` 必填（可多选）：`brahmin` | `kshatriya` | `vaishya` | `shudra`。
 
 ## 首页诗文
 
