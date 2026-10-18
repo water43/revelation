@@ -12,7 +12,9 @@ const figures = defineCollection({
     name: z.string(),
     nameAlt: z.string(),
     era: z.string(),
-    categories: z.array(z.enum(['literary', 'philosopher', 'religion', 'engineer', 'folk'])),
+    categories: z.array(
+      z.enum(['literary', 'philosopher', 'religion', 'engineer', 'folk', 'decision']),
+    ),
     summary: z.string(),
     works: z.array(z.string()).default([]),
     essays: z.array(z.string()).default([]),
