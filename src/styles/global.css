@@ -1157,11 +1157,47 @@ html.page-home .site-main--home {
   color: var(--ink-soft);
 }
 
-.detail-body :global(h2) {
+.detail-body :global(h2),
+.detail-body :global(h3) {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
   margin: 1.6rem 0 0.7rem;
+}
+
+.detail-body :global(h3) {
+  font-size: 1.08rem;
+  letter-spacing: 0.02em;
+}
+
+.detail-body :global(h3:first-child) {
+  margin-top: 0;
+}
+
+.detail-body :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.detail-body :global(th),
+.detail-body :global(td) {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.detail-body :global(th) {
+  width: 7.5rem;
+  color: var(--ink-mute);
+  font-weight: 600;
+  background: rgba(28, 24, 20, 0.03);
+}
+
+.detail-body :global(td) {
+  color: var(--ink-soft);
 }
 
 .works {
