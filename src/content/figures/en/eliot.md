@@ -11,7 +11,7 @@ works:
   - The Waste Land
   - The Hollow Men
   - Four Quartets
-order: 60
+order: 3
 ---
 
 Thomas Stearns Eliot was a defining renovator of twentieth-century English poetry. Early works such as “The Love Song of J. Alfred Prufrock” and *The Waste Land* gave voice to urban anxiety, cultural fragmentation, and crisis of belief, bringing allusion, polyglot texture, and montage into modern verse.

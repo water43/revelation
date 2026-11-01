@@ -8,7 +8,7 @@ varnas: [brahmin]
 summary: Pre-Socratic thinker of becoming and the unity of opposites, known for fragments such as “you cannot step twice into the same river.”
 works:
   - On Nature (fragments)
-order: 1
+order: 4
 ---
 
 Heraclitus of Ephesus is a Pre-Socratic thinker whose work survives only in fragments, yet shaped later ideas of change, opposition, and *logos*.

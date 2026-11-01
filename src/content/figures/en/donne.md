@@ -11,7 +11,7 @@ works:
   - The Flea
   - The Funeral
   - The Sun Rising
-order: 25
+order: 2
 ---
 
 John Donne is among the central English poets of the seventeenth century. His early secular love lyrics and later religious meditations—written after he became Dean of St Paul’s—share the same wit, paradox, and bodily intensity.
