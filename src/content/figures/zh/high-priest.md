@@ -11,6 +11,8 @@ works:
   - 祭礼历与洁净律
   - 神谕与圣法解释
   - 圣职传承与授任
+essays:
+  - state-necessity-and-self-government
 order: 28
 ---
 

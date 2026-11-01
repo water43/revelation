@@ -11,6 +11,8 @@ works:
   - Liturgical calendar and purity law
   - Oracle and sacred-law interpretation
   - Priestly succession and ordination
+essays:
+  - state-necessity-and-self-government
 order: 28
 ---
 
