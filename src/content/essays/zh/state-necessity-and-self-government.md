@@ -2,7 +2,7 @@
 slug: state-necessity-and-self-government
 title: 国家的必要性与人民的自我治理
 titleAlt: The Necessity of the State and Popular Self-Government
-summary: 围绕霍布斯、洛克、卢梭与现代政治秩序：国家为何出现、权力如何受限、人民如何参与，以及地方自治能否与国家并存。
+summary: "围绕霍布斯、洛克、卢梭与现代政治秩序：国家为何出现、权力如何受限、人民如何参与，以及地方自治能否与国家并存。"
 figure: high-priest
 ---
 

@@ -2,7 +2,7 @@
 slug: state-necessity-and-self-government
 title: The Necessity of the State and Popular Self-Government
 titleAlt: 国家的必要性与人民的自我治理
-summary: Around Hobbes, Locke, Rousseau, and modern political order: why the state appears, how power is limited, how the people take part, and whether local self-rule can coexist with the state.
+summary: "Around Hobbes, Locke, Rousseau, and modern political order: why the state appears, how power is limited, how the people take part, and whether local self-rule can coexist with the state."
 figure: high-priest
 ---
 
