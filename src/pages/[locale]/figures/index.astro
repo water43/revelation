@@ -77,37 +77,33 @@ const totalCount = figures.length;
     </div>
 
     <div class="filter-dims">
-      <div class="filter-dim" role="group" aria-label={dict.categoryLabel}>
-        <span class="filter-dim-label">{dict.categoryLabel}</span>
-        <div class="filter-seg">
-          <button type="button" class="filter-chip is-active" data-category="all">
-            {dict.unspecified}
-          </button>
+      <fieldset class="filter-dim">
+        <legend class="filter-dim-label">{dict.categoryLabel}</legend>
+        <div class="filter-checks">
           {
             categoryKeys.map((key) => (
-              <button type="button" class="filter-chip" data-category={key}>
-                {dict.categories[key]}
-              </button>
+              <label class="filter-check">
+                <input type="checkbox" data-category={key} />
+                <span>{dict.categories[key]}</span>
+              </label>
             ))
           }
         </div>
-      </div>
+      </fieldset>
 
-      <div class="filter-dim" role="group" aria-label={dict.varnaLabel}>
-        <span class="filter-dim-label">{dict.varnaLabel}</span>
-        <div class="filter-seg">
-          <button type="button" class="filter-chip is-active" data-varna="all">
-            {dict.unspecified}
-          </button>
+      <fieldset class="filter-dim">
+        <legend class="filter-dim-label">{dict.varnaLabel}</legend>
+        <div class="filter-checks">
           {
             varnaKeys.map((key) => (
-              <button type="button" class="filter-chip filter-chip-varna" data-varna={key}>
-                {dict.varnas[key]}
-              </button>
+              <label class="filter-check filter-check-varna">
+                <input type="checkbox" data-varna={key} />
+                <span>{dict.varnas[key]}</span>
+              </label>
             ))
           }
         </div>
-      </div>
+      </fieldset>
     </div>
   </aside>
 
@@ -147,49 +143,61 @@ const totalCount = figures.length;
   const countEl = document.querySelector<HTMLElement>('[data-result-count]');
   const clearBtn = document.querySelector<HTMLButtonElement>('[data-clear]');
   const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view]'));
-  let activeCategory = 'all';
-  let activeVarna = 'all';
+  const categoryInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-category]') || [],
+  );
+  const varnaInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-varna]') || [],
+  );
   const storageKey = 'revelation-figure-view';
   const resultTemplate = root?.dataset.resultTemplate || '{n}';
 
-  function setActive(group: string, value: string) {
-    if (!root) return;
-    root.querySelectorAll(`[data-${group}]`).forEach((el) => {
-      const btn = el as HTMLElement;
-      const on = (btn.dataset[group] || '') === value;
-      btn.classList.toggle('is-active', on);
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
+  function selectedValues(inputs: HTMLInputElement[], attr: 'category' | 'varna') {
+    return inputs
+      .filter((input) => input.checked)
+      .map((input) => input.dataset[attr] || '')
+      .filter(Boolean);
+  }
+
+  function matchesAny(haystack: string[], selected: string[]) {
+    if (selected.length === 0) return true;
+    return selected.some((value) => haystack.includes(value));
   }
 
   function applyFilters() {
     const q = (search?.value || '').trim().toLowerCase();
+    const activeCategories = selectedValues(categoryInputs, 'category');
+    const activeVarnas = selectedValues(varnaInputs, 'varna');
     let visible = 0;
+
     for (const item of items) {
-      const cats = (item.dataset.categories || '').split(',');
-      const varnas = (item.dataset.varnas || '').split(',');
+      const cats = (item.dataset.categories || '').split(',').filter(Boolean);
+      const varnas = (item.dataset.varnas || '').split(',').filter(Boolean);
       const name = item.dataset.name || '';
-      const catOk = activeCategory === 'all' || cats.includes(activeCategory);
-      const varnaOk = activeVarna === 'all' || varnas.includes(activeVarna);
+      const catOk = matchesAny(cats, activeCategories);
+      const varnaOk = matchesAny(varnas, activeVarnas);
       const qOk = !q || name.includes(q);
       const show = catOk && varnaOk && qOk;
       item.hidden = !show;
       item.classList.toggle('is-filtered-out', !show);
       if (show) visible += 1;
     }
+
     if (empty) empty.hidden = visible > 0;
     if (countEl) countEl.textContent = resultTemplate.replace('{n}', String(visible));
-    const filtered = activeCategory !== 'all' || activeVarna !== 'all' || Boolean(q);
+    const filtered = activeCategories.length > 0 || activeVarnas.length > 0 || Boolean(q);
     if (clearBtn) clearBtn.hidden = !filtered;
     root?.classList.toggle('has-filter', filtered);
   }
 
   function clearFilters() {
-    activeCategory = 'all';
-    activeVarna = 'all';
+    categoryInputs.forEach((input) => {
+      input.checked = false;
+    });
+    varnaInputs.forEach((input) => {
+      input.checked = false;
+    });
     if (search) search.value = '';
-    setActive('category', 'all');
-    setActive('varna', 'all');
     applyFilters();
   }
 
@@ -208,22 +216,8 @@ const totalCount = figures.length;
     }
   }
 
-  root?.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const next = btn.dataset.category || 'all';
-      activeCategory = activeCategory === next && next !== 'all' ? 'all' : next;
-      setActive('category', activeCategory);
-      applyFilters();
-    });
-  });
-
-  root?.querySelectorAll<HTMLButtonElement>('[data-varna]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const next = btn.dataset.varna || 'all';
-      activeVarna = activeVarna === next && next !== 'all' ? 'all' : next;
-      setActive('varna', activeVarna);
-      applyFilters();
-    });
+  [...categoryInputs, ...varnaInputs].forEach((input) => {
+    input.addEventListener('change', applyFilters);
   });
 
   clearBtn?.addEventListener('click', clearFilters);
@@ -234,8 +228,6 @@ const totalCount = figures.length;
 
   search?.addEventListener('input', applyFilters);
 
-  setActive('category', 'all');
-  setActive('varna', 'all');
   applyFilters();
 
   try {
