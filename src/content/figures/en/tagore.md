@@ -11,7 +11,7 @@ works:
   - Stray Birds
   - The Crescent Moon
   - The Gardener
-order: 10
+order: 1
 ---
 
 Rabindranath Tagore stands at the center of modern Indian letters. Writing primarily in Bengali and later reaching the world through English translations, he carried a South Asian lyric tradition into the early twentieth-century global imagination.

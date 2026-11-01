@@ -8,7 +8,7 @@ varnas: [brahmin]
 summary: Pre-Socratic philosopher who argued that true Being is one, eternal, and unchanging, founding a lasting tradition of ontology and rational argument.
 works:
   - On Nature (fragments)
-order: 2
+order: 5
 ---
 
 Parmenides is the central figure of the Eleatic school. In verse fragments he sets out the ways of Being and non-Being, elevating what reason grasps over the changing world of the senses.
