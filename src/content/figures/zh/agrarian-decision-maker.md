@@ -16,13 +16,13 @@ order: 63
 
 ### 基本资料
 
-| 项目 | 内容 |
-| --- | --- |
-| 时代 | 约近代至当代 |
-| 图件 | 决策 |
-| 种姓 | 婆罗门、刹帝利 |
-| 典型职能 | 帮部起草政策；嵌生产架构；抬成国家农政制度 |
-| 对照谱系 | 民间生产者（种植—畜禽—渔业等）；工程（泰勒、戴明、钱学森等） |
+<dl class="profile-facts">
+  <div class="profile-fact"><dt>时代</dt><dd>约近代至当代</dd></div>
+  <div class="profile-fact"><dt>图件</dt><dd>决策</dd></div>
+  <div class="profile-fact"><dt>种姓</dt><dd>婆罗门、刹帝利</dd></div>
+  <div class="profile-fact"><dt>典型职能</dt><dd>帮部起草政策；嵌生产架构；抬成国家农政制度</dd></div>
+  <div class="profile-fact"><dt>对照谱系</dt><dd>民间生产者（种植—畜禽—渔业等）；工程（泰勒、戴明、钱学森等）</dd></div>
+</dl>
 
 ### 设定资料
 

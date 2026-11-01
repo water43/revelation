@@ -18,14 +18,14 @@ order: 28
 
 ### Basic profile
 
-| Field | Value |
-| --- | --- |
-| Era | Ancient to classical (cross-cultural type) |
-| Type | Religion |
-| Varna | Brahmin |
-| Typical function | Lead the highest sacrifice; keep sacred law and purity; interpret oracle/scripture; sustain the priestly line |
-| Historical echoes | Hebrew Kohen Gadol; high priest of Amun; Roman Pontifex Maximus; Vedic/Brahmin ritual office |
-| Related lines | Literary–religion (Donne); philosophers (who conceptualize the sacred); folk labor (Runtu, fishwife) |
+<dl class="profile-facts">
+  <div class="profile-fact"><dt>Era</dt><dd>Ancient to classical (cross-cultural type)</dd></div>
+  <div class="profile-fact"><dt>Type</dt><dd>Religion</dd></div>
+  <div class="profile-fact"><dt>Varna</dt><dd>Brahmin</dd></div>
+  <div class="profile-fact"><dt>Typical function</dt><dd>Lead the highest sacrifice; keep sacred law and purity; interpret oracle/scripture; sustain the priestly line</dd></div>
+  <div class="profile-fact"><dt>Historical echoes</dt><dd>Hebrew Kohen Gadol; high priest of Amun; Roman Pontifex Maximus; Vedic/Brahmin ritual office</dd></div>
+  <div class="profile-fact"><dt>Related lines</dt><dd>Literary–religion (Donne); philosophers (who conceptualize the sacred); folk labor (Runtu, fishwife)</dd></div>
+</dl>
 
 ### Profile
 

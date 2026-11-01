@@ -63,7 +63,7 @@ npm run preview
 2. Frontmatter 使用相同 `slug`，并填写 `name`、`nameAlt`、`era`、`categories`、`varnas`、`summary`、`works`、`order`。
 3. 肖像放入 `public/portraits/{slug}.jpg`。
 4. **正文目录用主流典型结构**（对齐数码兽图鉴式说明，勿再用「历史局限 / 个人与角色局限 / 现代化方案」等旧目录）：
-   - `### 基本资料`（时代、图件、种姓、典型职能等表）
+   - `### 基本资料`：用 `<dl class="profile-facts">` 键值列表（勿用两列表格，手机易把标签挤成竖排）
    - `### 设定资料`（主设定正文）
    - `### 扩展介绍`（可选；补充能力、对照与局限）
    - 英文对应：`### Basic profile` / `### Profile` / `### Extended notes`

@@ -1174,32 +1174,85 @@ html.page-home .site-main--home {
   margin-top: 0;
 }
 
+/* Key–value fact list for basic profile (mobile-first; avoids table column squeeze). */
+.detail-body :global(.profile-facts) {
+  margin: 0 0 1.35rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 250, 242, 0.55);
+}
+
+.detail-body :global(.profile-fact) {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-body :global(.profile-fact:last-child) {
+  border-bottom: 0;
+}
+
+.detail-body :global(.profile-facts dt) {
+  margin: 0 0 0.25rem;
+  color: var(--ink-mute);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+.detail-body :global(.profile-facts dd) {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .detail-body :global(.profile-fact) {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0.75rem 1rem;
+    align-items: start;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .detail-body :global(.profile-facts dt) {
+    margin: 0;
+    padding-top: 0.1rem;
+  }
+}
+
+/* Keep essay / legacy markdown tables readable. */
 .detail-body :global(table) {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 1.25rem;
   font-size: 0.95rem;
   border: 1px solid var(--line);
-  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.detail-body :global(thead),
+.detail-body :global(tbody),
+.detail-body :global(tr) {
+  width: 100%;
 }
 
 .detail-body :global(th),
 .detail-body :global(td) {
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.7rem;
   text-align: left;
   vertical-align: top;
-}
-
-.detail-body :global(tr:last-child) th,
-.detail-body :global(tr:last-child) td {
-  border-bottom: 0;
+  white-space: nowrap;
 }
 
 .detail-body :global(th) {
-  width: 1%;
-  white-space: nowrap;
   color: var(--ink-mute);
   font-weight: 600;
   background: rgba(28, 24, 20, 0.03);
@@ -1207,48 +1260,9 @@ html.page-home .site-main--home {
 
 .detail-body :global(td) {
   color: var(--ink-soft);
+  white-space: normal;
   word-break: break-word;
-}
-
-/* Stack basic-profile rows on narrow screens so labels stay readable. */
-@media (max-width: 640px) {
-  .detail-body :global(table),
-  .detail-body :global(tbody),
-  .detail-body :global(tr),
-  .detail-body :global(th),
-  .detail-body :global(td) {
-    display: block;
-    width: 100%;
-  }
-
-  .detail-body :global(tr) {
-    padding: 0.65rem 0.75rem;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .detail-body :global(tr:last-child) {
-    border-bottom: 0;
-  }
-
-  .detail-body :global(th),
-  .detail-body :global(td) {
-    border: 0;
-    padding: 0;
-    width: auto;
-    white-space: normal;
-    background: transparent;
-  }
-
-  .detail-body :global(th) {
-    margin-bottom: 0.2rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-  }
-
-  .detail-body :global(td) {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
+  min-width: 8rem;
 }
 
 .works {

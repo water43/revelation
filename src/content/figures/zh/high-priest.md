@@ -18,14 +18,14 @@ order: 28
 
 ### 基本资料
 
-| 项目 | 内容 |
-| --- | --- |
-| 时代 | 上古至古典（跨文化类型） |
-| 图件 | 宗教 |
-| 种姓 | 婆罗门 |
-| 典型职能 | 主持最高祭祀；保管圣法与洁净；解释神谕／圣典；维系圣职谱系 |
-| 历史对照 | 希伯来大祭司（科亨·加多尔）；埃及阿蒙祭司长；罗马大祭司长；吠陀／婆罗门祭官 |
-| 对照谱系 | 文学家—宗教（多恩）；哲人（把神圣写成概念）；民间劳力（闰土、鱼妇） |
+<dl class="profile-facts">
+  <div class="profile-fact"><dt>时代</dt><dd>上古至古典（跨文化类型）</dd></div>
+  <div class="profile-fact"><dt>图件</dt><dd>宗教</dd></div>
+  <div class="profile-fact"><dt>种姓</dt><dd>婆罗门</dd></div>
+  <div class="profile-fact"><dt>典型职能</dt><dd>主持最高祭祀；保管圣法与洁净；解释神谕／圣典；维系圣职谱系</dd></div>
+  <div class="profile-fact"><dt>历史对照</dt><dd>希伯来大祭司（科亨·加多尔）；埃及阿蒙祭司长；罗马大祭司长；吠陀／婆罗门祭官</dd></div>
+  <div class="profile-fact"><dt>对照谱系</dt><dd>文学家—宗教（多恩）；哲人（把神圣写成概念）；民间劳力（闰土、鱼妇）</dd></div>
+</dl>
 
 ### 设定资料
 

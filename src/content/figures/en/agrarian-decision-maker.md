@@ -16,13 +16,13 @@ order: 63
 
 ### Basic profile
 
-| Field | Value |
-| --- | --- |
-| Era | c. modern to contemporary |
-| Type | Decision |
-| Varna | Brahmin, Kshatriya |
-| Typical function | Draft ministry policy; seat production architecture; lift national agrarian institutions |
-| Related lines | Folk producers (crop–livestock–fishery, etc.); engineers (Taylor, Deming, Qian, etc.) |
+<dl class="profile-facts">
+  <div class="profile-fact"><dt>Era</dt><dd>c. modern to contemporary</dd></div>
+  <div class="profile-fact"><dt>Type</dt><dd>Decision</dd></div>
+  <div class="profile-fact"><dt>Varna</dt><dd>Brahmin, Kshatriya</dd></div>
+  <div class="profile-fact"><dt>Typical function</dt><dd>Draft ministry policy; seat production architecture; lift national agrarian institutions</dd></div>
+  <div class="profile-fact"><dt>Related lines</dt><dd>Folk producers (crop–livestock–fishery, etc.); engineers (Taylor, Deming, Qian, etc.)</dd></div>
+</dl>
 
 ### Profile
 
