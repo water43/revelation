@@ -5,6 +5,9 @@ nameAlt: Georg Wilhelm Friedrich Hegel
 era: 1770–1831
 categories: [philosopher]
 functions: [knowledge]
+attribute: data
+field: canon
+stage: mega
 summary: 德意志观念论集大成者，以辩证法与精神现象学描述意识、历史与绝对精神的展开。
 works:
   - 精神现象学

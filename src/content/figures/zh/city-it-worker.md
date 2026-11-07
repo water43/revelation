@@ -5,6 +5,9 @@ nameAlt: Urban IT Worker
 era: 约 1950s–1970s
 categories: [folk]
 functions: [execution]
+attribute: data
+field: market
+stage: champion
 summary: 都市机房与办公室里的信息技术员把组织流程编成可重复作业；职业进入信息化，但一线仍以出卖劳动为主。
 works:
   - 批处理作业

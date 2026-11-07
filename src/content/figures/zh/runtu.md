@@ -5,6 +5,9 @@ nameAlt: Runtu
 era: 约清末民初
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: "劳力生活少练抽象书面思辨；《故乡》里的闰土却是少年已能讲述，中年被生存与等级磨掉，不是村里人从来不会想。"
 works:
   - 鲁迅《故乡》

@@ -5,6 +5,9 @@ nameAlt: 纽海文鱼妇
 era: c. 18th–19th century
 categories: [folk]
 functions: [circulation, labor, service]
+attribute: virus
+field: market
+stage: perfect
 summary: The village fish seller stayed at haulage and resale; the way out is shared cold chain, on-shore processing, and order information—not a longer resale walk.
 works:
   - Street selling in town

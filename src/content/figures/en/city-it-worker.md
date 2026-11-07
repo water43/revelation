@@ -5,6 +5,9 @@ nameAlt: 都市信息技术员
 era: c. 1950s–1970s
 categories: [folk]
 functions: [execution]
+attribute: data
+field: market
+stage: champion
 summary: An urban computer-room and office IT worker who turns organization routines into repeatable jobs; the trade entered the information age, but the front line still sells labor.
 works:
   - Batch jobs

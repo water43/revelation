@@ -5,6 +5,9 @@ nameAlt: 弗雷德里克·温斯洛·泰勒
 era: 1856–1915
 categories: [engineer]
 functions: [production, knowledge]
+attribute: data
+field: workshop
+stage: perfect
 summary: American mechanical engineer and management theorist; a principal founder of scientific management, with lasting impact on industrial engineering.
 works:
   - The Principles of Scientific Management

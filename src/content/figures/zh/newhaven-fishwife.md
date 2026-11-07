@@ -5,6 +5,9 @@ nameAlt: Newhaven Fishwife
 era: 约 18–19 世纪
 categories: [folk]
 functions: [circulation, labor, service]
+attribute: virus
+field: market
+stage: perfect
 summary: 渔村卖鱼人停在运输转售；突破点在共享冷链、产地加工与订单信息，而不是继续加长倒卖路程。
 works:
   - 进城叫卖

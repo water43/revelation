@@ -5,6 +5,9 @@ nameAlt: 约翰·洛克
 era: 1632–1704
 categories: [philosopher]
 functions: [knowledge, order]
+attribute: data
+field: temple
+stage: perfect
 summary: A central figure in English empiricism and classical liberalism; he held that government power comes from popular authorization and exists to protect life, liberty, and property.
 works:
   - Two Treatises of Government

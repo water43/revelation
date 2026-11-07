@@ -5,6 +5,9 @@ nameAlt: 巴门尼德
 era: c. 515–450 BCE
 categories: [philosopher]
 functions: [knowledge]
+attribute: data
+field: canon
+stage: perfect
 summary: Pre-Socratic philosopher who argued that true Being is one, eternal, and unchanging, founding a lasting tradition of ontology and rational argument.
 works:
   - On Nature (fragments)

@@ -5,6 +5,9 @@ nameAlt: 果农
 era: c. pre-industrial to modern
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: The orchard grower stakes the crop on years of tree age and bloom weather; the way out is cultivar renewal, storage, and graded lots—not another bare hillside.
 works:
   - Planting and pruning

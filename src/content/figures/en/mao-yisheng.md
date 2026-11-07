@@ -5,6 +5,9 @@ nameAlt: 茅以升
 era: 1896–1989
 categories: [engineer]
 functions: [production, knowledge]
+attribute: data
+field: workshop
+stage: perfect
 summary: Chinese bridge engineer and educator who led the Qiantang River Bridge and advanced bridge engineering research and higher technical education.
 works:
   - Qiantang River Bridge

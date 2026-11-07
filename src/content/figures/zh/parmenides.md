@@ -5,6 +5,9 @@ nameAlt: Parmenides
 era: 约公元前515–前450
 categories: [philosopher]
 functions: [knowledge]
+attribute: data
+field: canon
+stage: perfect
 summary: 前苏格拉底哲学家，主张真正的存在是一、永恒且不变，开创了西方本体论与理性论证的重要传统。
 works:
   - 论自然（残篇）

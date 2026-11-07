@@ -5,6 +5,9 @@ nameAlt: 畜禽饲养人
 era: c. pre-industrial to modern
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: The keeper of pigs, chickens, ducks, and geese stakes the household on feed and plague; the way out is biosecurity, batches, and priced exit data—not another ring of pens.
 works:
   - Yard feeding

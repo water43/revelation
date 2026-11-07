@@ -5,6 +5,9 @@ nameAlt: 托马斯·霍布斯
 era: 1588–1679
 categories: [philosopher]
 functions: [knowledge, order]
+attribute: vaccine
+field: temple
+stage: perfect
 summary: A founder of modern English political philosophy; in Leviathan he argues that people need a common authority to escape the insecurity of the state of nature.
 works:
   - Leviathan

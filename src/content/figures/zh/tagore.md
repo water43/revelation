@@ -5,6 +5,9 @@ nameAlt: Rabindranath Tagore
 era: 1861–1941
 categories: [literary]
 functions: [meaning]
+attribute: vaccine
+field: canon
+stage: mega
 summary: 印度诗人、作家与思想家，首位获诺贝尔文学奖的亚洲作家，以《吉檀迦利》闻名于世。
 works:
   - 吉檀迦利

@@ -5,6 +5,9 @@ nameAlt: Frederick Winslow Taylor
 era: 1856–1915
 categories: [engineer]
 functions: [production, knowledge]
+attribute: data
+field: workshop
+stage: perfect
 summary: 美国机械工程师与管理学家，科学管理理论的主要奠基人，对现代工业工程与工厂管理影响深远。
 works:
   - 科学管理原理
