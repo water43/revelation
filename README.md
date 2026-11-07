@@ -14,7 +14,7 @@ Revelation 不是百科词条的堆叠，而是一份偏人文气质的「图鉴
 - **中 / 英**：路由前缀 `/zh/`、`/en/`，导航可切换语言；人物条目分目录维护，共用 `slug`。
 
 当前收录包括文学家、哲学家（含霍布斯、洛克、卢梭等），泰勒、戴明、福特、爱迪生、钱学森、茅以升、布鲁内尔等工程—系统—管理谱系，以及「民间」职业类型（持续扩充）：闰土、纽海文鱼妇、都市信息技术员，以及农村农业结构下的种植农民、畜禽饲养人（猪鸡鸭鹅）、塘养渔户（鱼虾蟹）、沿海捕捞人、菜农、果农、牧人等。
-图鉴保留图件分类（文学家 / 哲学家 / 宗教 / 工程 / 民间 / 决策），并叠加一套固定通用标签——古典种姓四阶：**婆罗门、刹帝利、吠舍、首陀罗**（每条人物必标，可多选）。决策类典型形象如「农政决策者」；宗教类典型形象如「大祭司」（最高祭祀、圣法与洁净、神人中介）。若无肖像文件，则显示姓名首字母默认头像。
+图鉴保留图件分类（文学家 / 哲学家 / 宗教 / 工程 / 民间 / 决策），并叠加一套固定「职能」硬十二标签（可多选：主标 + 兼标）：**知识、圣法、意义、秩序、决策、护持、流通、经营、生产组织、执行、劳作、服务**，分属知解 / 政序 / 营流 / 践履四组。决策类典型形象如「农政决策者」；宗教类典型形象如「大祭司」。若无肖像文件，则显示姓名首字母默认头像。
 
 ## 界面预览
 
@@ -60,7 +60,7 @@ npm run preview
 ## 新增人物
 
 1. 在 `src/content/figures/zh/` 与 `en/` 各添加同名 Markdown。
-2. Frontmatter 使用相同 `slug`，并填写 `name`、`nameAlt`、`era`、`categories`、`varnas`、`summary`、`works`、`order`。
+2. Frontmatter 使用相同 `slug`，并填写 `name`、`nameAlt`、`era`、`categories`、`functions`、`summary`、`works`、`order`。
 3. 肖像放入 `public/portraits/{slug}.jpg`。
 4. **正文目录用主流典型结构**（对齐数码兽图鉴式说明，勿再用「历史局限 / 个人与角色局限 / 现代化方案」等旧目录）：
    - `### 基本资料`：用 `<dl class="profile-facts">` 键值列表（勿用两列表格，手机易把标签挤成竖排）
@@ -69,7 +69,7 @@ npm run preview
    - 英文对应：`### Basic profile` / `### Profile` / `### Extended notes`
 
 `categories` 可选：`literary` | `philosopher` | `religion` | `engineer` | `folk` | `decision`。  
-`varnas` 必填（可多选）：`brahmin` | `kshatriya` | `vaishya` | `shudra`。
+`functions` 必填（可多选，建议 1 主标 + ≤2 兼标）：`knowledge` | `sacred` | `meaning` | `order` | `decision` | `guard` | `circulation` | `enterprise` | `production` | `execution` | `labor` | `service`。
 
 ## 首页诗文
 

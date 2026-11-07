@@ -4,7 +4,7 @@ name: 托马斯·霍布斯
 nameAlt: Thomas Hobbes
 era: 1588–1679
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge, order]
 summary: 英国近代政治哲学奠基人之一，以《利维坦》论证：为摆脱自然状态中的不安全，人们需要共同权威以保障秩序。
 works:
   - 利维坦

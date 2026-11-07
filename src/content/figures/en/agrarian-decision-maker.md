@@ -4,7 +4,7 @@ name: Agrarian Decision-Maker
 nameAlt: 农政决策者
 era: c. modern to contemporary
 categories: [decision]
-varnas: [brahmin, kshatriya]
+functions: [decision, order]
 summary: Turns field and harbor constraints into enforceable rules and institutions; can draft ministry policy and seat production architecture in a national agrarian frame—without taking another turn in the field for the farmer.
 works:
   - Agrarian rules and inspection/spec texts
@@ -19,7 +19,7 @@ order: 63
 <dl class="profile-facts">
   <div class="profile-fact"><dt>Era</dt><dd>c. modern to contemporary</dd></div>
   <div class="profile-fact"><dt>Type</dt><dd>Decision</dd></div>
-  <div class="profile-fact"><dt>Varna</dt><dd>Brahmin, Kshatriya</dd></div>
+  <div class="profile-fact"><dt>Function</dt><dd>Decision, Order</dd></div>
   <div class="profile-fact"><dt>Typical function</dt><dd>Draft ministry policy; seat production architecture; lift national agrarian institutions</dd></div>
   <div class="profile-fact"><dt>Related lines</dt><dd>Folk producers (crop–livestock–fishery, etc.); engineers (Taylor, Deming, Qian, etc.)</dd></div>
 </dl>
@@ -28,7 +28,7 @@ order: 63
 
 The agrarian decision-maker is a typical decision figure on the rural-and-agriculture line—not a ministry nameplate, and not one documented biography. The work sits among briefs, surveys, meetings, and text: listening to the limits of planting, livestock, ponds, coastal catch, vegetables, orchards, and herds, then writing “must sell today,” “one plague wipes a year,” and “the commons is grazed thin” into rules that can be issued—inspection and closed seasons, exit grades, stocking rates, cold chain and sorting, order and procurement interfaces. When a ministry needs policy, this role can draft it. When the state needs an institution, it can lift a local fix into a reusable frame. In speech people often call such a person the agrarian “teacher”: what is taught is not how to plough, but which line can become law and which must stay a pilot first.
 
-In varna terms the role sits at brahmin and kshatriya: the former draws experience into teachable, countersignable text; the latter lets that text enter order so quotas, inspection, procurement, and pilot scope actually govern production. Crop, livestock, pond, catch, vegetable, orchard, and herd sit on the folk front line; the Newhaven fishwife on circulation; Taylor, Ford, Deming, and Qian on engineering method. The agrarian decision-maker invents neither the assembly line nor the night watch on the pond, but decides which methods enter regulation and which front-line constraints the national frame must catch.
+In functional terms the role is Decision first, Order second: it draws experience into teachable, countersignable text, then lets that text enter public rules so quotas, inspection, procurement, and pilot scope actually govern production. Crop, livestock, pond, catch, vegetable, orchard, and herd sit on the labor front line; the Newhaven fishwife on circulation; Taylor, Ford, Deming, and Qian on production organization. The agrarian decision-maker invents neither the assembly line nor the night watch on the pond, but decides which methods enter regulation and which front-line constraints the national frame must catch.
 
 ### Extended notes
 

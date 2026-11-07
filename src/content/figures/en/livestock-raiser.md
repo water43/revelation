@@ -4,7 +4,7 @@ name: Livestock Raiser
 nameAlt: 畜禽饲养人
 era: c. pre-industrial to modern
 categories: [folk]
-varnas: [vaishya]
+functions: [labor]
 summary: The keeper of pigs, chickens, ducks, and geese stakes the household on feed and plague; the way out is biosecurity, batches, and priced exit data—not another ring of pens.
 works:
   - Yard feeding

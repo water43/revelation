@@ -4,7 +4,7 @@ name: W. Edwards Deming
 nameAlt: 威廉·爱德华兹·戴明
 era: 1900–1993
 categories: [engineer]
-varnas: [brahmin, kshatriya]
+functions: [production, knowledge]
 summary: American statistician, professor, and consultant known for statistical quality control and his Fourteen Points; hugely influential on postwar Japanese industry.
 works:
   - Out of the Crisis

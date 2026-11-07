@@ -11,10 +11,10 @@ interface Props {
   era: string;
   summary: string;
   categories: string[];
-  varnas: string[];
+  functions: string[];
 }
 
-const { locale, href, slug, name, nameAlt, era, summary, categories, varnas } = Astro.props;
+const { locale, href, slug, name, nameAlt, era, summary, categories, functions } = Astro.props;
 const dict = t(locale);
 ---
 
@@ -29,8 +29,8 @@ const dict = t(locale);
     <p class="summary">{summary}</p>
     <div class="tags">
       {
-        varnas.map((v) => (
-          <span class="tag tag-varna">{dict.varnas[v] ?? v}</span>
+        functions.map((fn) => (
+          <span class="tag tag-function">{dict.functions[fn] ?? fn}</span>
         ))
       }
       {

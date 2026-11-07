@@ -26,7 +26,26 @@ const categoryKeys = [
   'folk',
   'decision',
 ] as const;
-const varnaKeys = ['brahmin', 'kshatriya', 'vaishya', 'shudra'] as const;
+
+const functionGroups = [
+  {
+    key: 'insight',
+    keys: ['knowledge', 'sacred', 'meaning'],
+  },
+  {
+    key: 'polity',
+    keys: ['order', 'decision', 'guard'],
+  },
+  {
+    key: 'economy',
+    keys: ['circulation', 'enterprise', 'production'],
+  },
+  {
+    key: 'practice',
+    keys: ['execution', 'labor', 'service'],
+  },
+] as const;
+
 const totalCount = figures.length;
 ---
 
@@ -91,19 +110,28 @@ const totalCount = figures.length;
         </div>
       </fieldset>
 
-      <fieldset class="filter-dim">
-        <legend class="filter-dim-label">{dict.varnaLabel}</legend>
-        <div class="filter-checks">
+      <div class="filter-dim filter-dim-functions" role="group" aria-label={dict.functionLabel}>
+        <span class="filter-dim-label">{dict.functionLabel}</span>
+        <div class="filter-function-groups">
           {
-            varnaKeys.map((key) => (
-              <label class="filter-check filter-check-varna">
-                <input type="checkbox" data-varna={key} />
-                <span>{dict.varnas[key]}</span>
-              </label>
+            functionGroups.map((group) => (
+              <fieldset class="filter-function-group">
+                <legend class="filter-function-group-label">
+                  {dict.functionGroups[group.key]}
+                </legend>
+                <div class="filter-checks">
+                  {group.keys.map((key) => (
+                    <label class="filter-check filter-check-function">
+                      <input type="checkbox" data-function={key} />
+                      <span>{dict.functions[key]}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
             ))
           }
         </div>
-      </fieldset>
+      </div>
     </div>
   </aside>
 
@@ -114,7 +142,7 @@ const totalCount = figures.length;
           data-figure-item
           data-name={`${figure.data.name} ${figure.data.nameAlt}`.toLowerCase()}
           data-categories={figure.data.categories.join(',')}
-          data-varnas={figure.data.varnas.join(',')}
+          data-functions={figure.data.functions.join(',')}
         >
           <FigureCard
             locale={locale}
@@ -125,7 +153,7 @@ const totalCount = figures.length;
             era={figure.data.era}
             summary={figure.data.summary}
             categories={figure.data.categories}
-            varnas={figure.data.varnas}
+            functions={figure.data.functions}
           />
         </li>
       ))
@@ -146,13 +174,13 @@ const totalCount = figures.length;
   const categoryInputs = Array.from(
     root?.querySelectorAll<HTMLInputElement>('input[data-category]') || [],
   );
-  const varnaInputs = Array.from(
-    root?.querySelectorAll<HTMLInputElement>('input[data-varna]') || [],
+  const functionInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-function]') || [],
   );
   const storageKey = 'revelation-figure-view';
   const resultTemplate = root?.dataset.resultTemplate || '{n}';
 
-  function selectedValues(inputs: HTMLInputElement[], attr: 'category' | 'varna') {
+  function selectedValues(inputs: HTMLInputElement[], attr: 'category' | 'function') {
     return inputs
       .filter((input) => input.checked)
       .map((input) => input.dataset[attr] || '')
@@ -167,17 +195,17 @@ const totalCount = figures.length;
   function applyFilters() {
     const q = (search?.value || '').trim().toLowerCase();
     const activeCategories = selectedValues(categoryInputs, 'category');
-    const activeVarnas = selectedValues(varnaInputs, 'varna');
+    const activeFunctions = selectedValues(functionInputs, 'function');
     let visible = 0;
 
     for (const item of items) {
       const cats = (item.dataset.categories || '').split(',').filter(Boolean);
-      const varnas = (item.dataset.varnas || '').split(',').filter(Boolean);
+      const functions = (item.dataset.functions || '').split(',').filter(Boolean);
       const name = item.dataset.name || '';
       const catOk = matchesAny(cats, activeCategories);
-      const varnaOk = matchesAny(varnas, activeVarnas);
+      const functionOk = matchesAny(functions, activeFunctions);
       const qOk = !q || name.includes(q);
-      const show = catOk && varnaOk && qOk;
+      const show = catOk && functionOk && qOk;
       item.hidden = !show;
       item.classList.toggle('is-filtered-out', !show);
       if (show) visible += 1;
@@ -185,7 +213,7 @@ const totalCount = figures.length;
 
     if (empty) empty.hidden = visible > 0;
     if (countEl) countEl.textContent = resultTemplate.replace('{n}', String(visible));
-    const filtered = activeCategories.length > 0 || activeVarnas.length > 0 || Boolean(q);
+    const filtered = activeCategories.length > 0 || activeFunctions.length > 0 || Boolean(q);
     if (clearBtn) clearBtn.hidden = !filtered;
     root?.classList.toggle('has-filter', filtered);
   }
@@ -194,7 +222,7 @@ const totalCount = figures.length;
     categoryInputs.forEach((input) => {
       input.checked = false;
     });
-    varnaInputs.forEach((input) => {
+    functionInputs.forEach((input) => {
       input.checked = false;
     });
     if (search) search.value = '';
@@ -216,7 +244,7 @@ const totalCount = figures.length;
     }
   }
 
-  [...categoryInputs, ...varnaInputs].forEach((input) => {
+  [...categoryInputs, ...functionInputs].forEach((input) => {
     input.addEventListener('change', applyFilters);
   });
 

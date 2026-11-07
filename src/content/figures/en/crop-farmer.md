@@ -4,7 +4,7 @@ name: Crop Farmer
 nameAlt: 种植农民
 era: c. pre-industrial to modern
 categories: [folk]
-varnas: [vaishya]
+functions: [labor]
 summary: The field grower stakes the harvest on season and soil; the way out is seed, irrigation, and plot information that can be handed on—not another year of raw labor.
 works:
   - Ploughing and sowing

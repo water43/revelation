@@ -4,7 +4,7 @@ name: John Locke
 nameAlt: 约翰·洛克
 era: 1632–1704
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge, order]
 summary: A central figure in English empiricism and classical liberalism; he held that government power comes from popular authorization and exists to protect life, liberty, and property.
 works:
   - Two Treatises of Government
