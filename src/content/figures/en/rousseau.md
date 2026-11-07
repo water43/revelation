@@ -4,7 +4,7 @@ name: Jean-Jacques Rousseau
 nameAlt: 让-雅克·卢梭
 era: 1712–1778
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge, order]
 summary: A Genevan-born French Enlightenment thinker; through the social contract and popular sovereignty he argued that a legitimate order lets the people, as sovereign, help make the common rules.
 works:
   - The Social Contract

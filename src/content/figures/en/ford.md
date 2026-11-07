@@ -4,7 +4,7 @@ name: Henry Ford
 nameAlt: 亨利·福特
 era: 1863–1947
 categories: [engineer]
-varnas: [kshatriya, vaishya]
+functions: [production, enterprise]
 summary: American industrialist and founder of the Ford Motor Company, famed for the moving assembly line and mass production of the Model T.
 works:
   - Model T

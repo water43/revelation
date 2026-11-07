@@ -4,7 +4,7 @@ name: Thomas Hobbes
 nameAlt: 托马斯·霍布斯
 era: 1588–1679
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge, order]
 summary: A founder of modern English political philosophy; in Leviathan he argues that people need a common authority to escape the insecurity of the state of nature.
 works:
   - Leviathan

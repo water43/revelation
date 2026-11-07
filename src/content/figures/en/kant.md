@@ -4,7 +4,7 @@ name: Immanuel Kant
 nameAlt: 伊曼努尔·康德
 era: 1724–1804
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge]
 summary: Founder of German critical philosophy; he asked after the a priori conditions of knowledge, morality, and judgment, reshaping modern thought.
 works:
   - Critique of Pure Reason

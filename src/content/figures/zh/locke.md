@@ -4,7 +4,7 @@ name: 约翰·洛克
 nameAlt: John Locke
 era: 1632–1704
 categories: [philosopher]
-varnas: [brahmin]
+functions: [knowledge, order]
 summary: 英国经验论与古典自由主义重要人物，主张政府权力来自人民授权，并以保护生命、自由与财产为目的。
 works:
   - 政府论两篇
