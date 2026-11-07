@@ -51,9 +51,15 @@ const { data } = entry;
       <p class="alt">{data.nameAlt}</p>
       <p class="era">{data.era}</p>
       <div class="tags">
-        <span class="tag tag-stage">{dict.stages[data.stage] ?? data.stage}</span>
-        <span class="tag tag-attribute">{dict.attributes[data.attribute] ?? data.attribute}</span>
-        <span class="tag tag-field">{dict.fields[data.field] ?? data.field}</span>
+        <span class="tag tag-stage" data-stage={data.stage}>
+          {dict.stages[data.stage] ?? data.stage}
+        </span>
+        <span class="tag tag-attribute" data-attribute={data.attribute}>
+          {dict.attributes[data.attribute] ?? data.attribute}
+        </span>
+        <span class="tag tag-field" data-field={data.field}>
+          {dict.fields[data.field] ?? data.field}
+        </span>
         {
           data.functions.map((fn) => (
             <span class="tag tag-function">{dict.functions[fn] ?? fn}</span>

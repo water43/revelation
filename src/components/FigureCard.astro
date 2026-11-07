@@ -42,9 +42,11 @@ const dict = t(locale);
     </div>
     <p class="summary">{summary}</p>
     <div class="tags">
-      <span class="tag tag-stage">{dict.stages[stage] ?? stage}</span>
-      <span class="tag tag-attribute">{dict.attributes[attribute] ?? attribute}</span>
-      <span class="tag tag-field">{dict.fields[field] ?? field}</span>
+      <span class="tag tag-stage" data-stage={stage}>{dict.stages[stage] ?? stage}</span>
+      <span class="tag tag-attribute" data-attribute={attribute}>
+        {dict.attributes[attribute] ?? attribute}
+      </span>
+      <span class="tag tag-field" data-field={field}>{dict.fields[field] ?? field}</span>
       {
         functions.map((fn) => (
           <span class="tag tag-function">{dict.functions[fn] ?? fn}</span>
