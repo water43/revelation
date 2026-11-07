@@ -5,6 +5,9 @@ nameAlt: High Priest
 era: 上古至古典
 categories: [religion]
 functions: [sacred, order]
+attribute: vaccine
+field: temple
+stage: perfect
 summary: 站在神人交界处主持最高祭祀的人；他保管仪典与洁净规则，把共同体的罪疚、收成与战争托付给可重复的圣事，而不是私人灵感。
 works:
   - 至圣所仪典与赎罪日

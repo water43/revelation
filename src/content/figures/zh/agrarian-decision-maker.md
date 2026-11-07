@@ -5,6 +5,9 @@ nameAlt: Agrarian Decision-Maker
 era: 约近代至当代
 categories: [decision]
 functions: [decision, order]
+attribute: data
+field: temple
+stage: champion
 summary: 把田间与渔港的一线约束写成可执行的规章与制度；能起草部级政策，也能把生产架构嵌进国家农政框架，而不是替农民再下一趟田。
 works:
   - 农口规章与检疫/规格文本

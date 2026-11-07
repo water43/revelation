@@ -5,6 +5,9 @@ nameAlt: Heraclitus
 era: 约公元前535–前475
 categories: [philosopher]
 functions: [knowledge]
+attribute: virus
+field: canon
+stage: perfect
 summary: 前苏格拉底哲学家，以「万物流变」与「对立统一」著称，留下「人不能两次踏进同一条河流」等残篇。
 works:
   - 论自然（残篇）

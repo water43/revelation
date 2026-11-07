@@ -5,6 +5,9 @@ nameAlt: W. Edwards Deming
 era: 1900–1993
 categories: [engineer]
 functions: [production, knowledge]
+attribute: data
+field: workshop
+stage: perfect
 summary: 美国统计学家、教授与顾问，以统计质量控制与管理十四要点著称，对日本战后工业质量管理影响巨大。
 works:
   - 转危为安

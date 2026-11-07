@@ -5,6 +5,9 @@ nameAlt: 菜农
 era: c. pre-industrial to modern
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: The fresh-vegetable grower stakes the crop on overnight and the gate price; the way out is orders, chill, and graded crates—not one more dawn market run.
 works:
   - Beds and rotations

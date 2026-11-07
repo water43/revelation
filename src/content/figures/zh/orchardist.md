@@ -5,6 +5,9 @@ nameAlt: Orchardist
 era: 约前工业至近代
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: 种果树的人把收成押在多年树龄与花期上；突破点在品种更新、贮藏与可分级的批次，而不是再扩一片未挂果的山。
 works:
   - 建园与修剪

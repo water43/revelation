@@ -5,6 +5,9 @@ nameAlt: Vegetable Grower
 era: 约前工业至近代
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: 种菜卖鲜的人把收成押在隔夜与城门价上；突破点在订单、冷库与可规格的筐货，而不是再多赶一趟早市。
 works:
   - 畦作与轮茬

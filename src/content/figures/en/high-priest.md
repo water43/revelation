@@ -5,6 +5,9 @@ nameAlt: 大祭司
 era: Ancient to classical
 categories: [religion]
 functions: [sacred, order]
+attribute: vaccine
+field: temple
+stage: perfect
 summary: The one who stands at the border of god and people to lead the highest rites; he keeps calendar and purity rules, and entrusts a community’s guilt, harvest, and war to repeatable sacrament—not private inspiration.
 works:
   - Holy-of-holies rite and Day of Atonement

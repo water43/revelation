@@ -5,6 +5,9 @@ nameAlt: Mao Yisheng
 era: 1896–1989
 categories: [engineer]
 functions: [production, knowledge]
+attribute: data
+field: workshop
+stage: perfect
 summary: 中国桥梁专家与工程教育家，主持修建钱塘江大桥，长期从事桥梁工程研究与高等工科教育。
 works:
   - 钱塘江大桥

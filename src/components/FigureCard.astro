@@ -10,11 +10,25 @@ interface Props {
   nameAlt: string;
   era: string;
   summary: string;
-  categories: string[];
   functions: string[];
+  attribute: string;
+  field: string;
+  stage: string;
 }
 
-const { locale, href, slug, name, nameAlt, era, summary, categories, functions } = Astro.props;
+const {
+  locale,
+  href,
+  slug,
+  name,
+  nameAlt,
+  era,
+  summary,
+  functions,
+  attribute,
+  field,
+  stage,
+} = Astro.props;
 const dict = t(locale);
 ---
 
@@ -28,14 +42,12 @@ const dict = t(locale);
     </div>
     <p class="summary">{summary}</p>
     <div class="tags">
+      <span class="tag tag-stage">{dict.stages[stage] ?? stage}</span>
+      <span class="tag tag-attribute">{dict.attributes[attribute] ?? attribute}</span>
+      <span class="tag tag-field">{dict.fields[field] ?? field}</span>
       {
         functions.map((fn) => (
           <span class="tag tag-function">{dict.functions[fn] ?? fn}</span>
-        ))
-      }
-      {
-        categories.map((cat) => (
-          <span class="tag">{dict.categories[cat] ?? cat}</span>
         ))
       }
     </div>

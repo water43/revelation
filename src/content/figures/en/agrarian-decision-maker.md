@@ -5,6 +5,9 @@ nameAlt: 农政决策者
 era: c. modern to contemporary
 categories: [decision]
 functions: [decision, order]
+attribute: data
+field: temple
+stage: champion
 summary: Turns field and harbor constraints into enforceable rules and institutions; can draft ministry policy and seat production architecture in a national agrarian frame—without taking another turn in the field for the farmer.
 works:
   - Agrarian rules and inspection/spec texts

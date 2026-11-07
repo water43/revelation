@@ -5,6 +5,9 @@ nameAlt: 约翰·多恩
 era: 1572–1631
 categories: [literary, religion]
 functions: [meaning]
+attribute: virus
+field: canon
+stage: perfect
 summary: Leading Metaphysical poet of England, known for the Holy Sonnets and love poems that fuse body, faith, and paradox.
 works:
   - Holy Sonnets

@@ -18,15 +18,6 @@ const figures = all
   .filter((entry) => entry.id.startsWith(`${locale}/`))
   .sort((a, b) => a.data.order - b.data.order);
 
-const categoryKeys = [
-  'literary',
-  'philosopher',
-  'religion',
-  'engineer',
-  'folk',
-  'decision',
-] as const;
-
 const functionGroups = [
   {
     key: 'insight',
@@ -45,6 +36,10 @@ const functionGroups = [
     keys: ['execution', 'labor', 'service'],
   },
 ] as const;
+
+const attributeKeys = ['vaccine', 'data', 'virus'] as const;
+const fieldKeys = ['temple', 'canon', 'workshop', 'market', 'land'] as const;
+const stageKeys = ['rookie', 'champion', 'perfect', 'mega'] as const;
 
 const totalCount = figures.length;
 ---
@@ -96,22 +91,23 @@ const totalCount = figures.length;
     </div>
 
     <div class="filter-dims">
-      <fieldset class="filter-dim">
-        <legend class="filter-dim-label">{dict.categoryLabel}</legend>
-        <div class="filter-checks">
-          {
-            categoryKeys.map((key) => (
-              <label class="filter-check">
-                <input type="checkbox" data-category={key} />
-                <span>{dict.categories[key]}</span>
-              </label>
-            ))
-          }
-        </div>
-      </fieldset>
-
       <div class="filter-dim filter-dim-functions" role="group" aria-label={dict.functionLabel}>
-        <span class="filter-dim-label">{dict.functionLabel}</span>
+        <div class="filter-dim-heading">
+          <span class="filter-dim-label">{dict.functionLabel}</span>
+          <button
+            type="button"
+            class="filter-tip-btn"
+            data-tip-toggle="function"
+            aria-expanded="false"
+            aria-controls="filter-tip-function"
+            title={dict.tipLabel}
+          >
+            ?
+          </button>
+        </div>
+        <div class="filter-tip" id="filter-tip-function" data-tip="function" hidden>
+          {dict.functionTip}
+        </div>
         <div class="filter-function-groups">
           {
             functionGroups.map((group) => (
@@ -132,6 +128,93 @@ const totalCount = figures.length;
           }
         </div>
       </div>
+
+      <div class="filter-dim" role="group" aria-label={dict.attributeLabel}>
+        <div class="filter-dim-heading">
+          <span class="filter-dim-label">{dict.attributeLabel}</span>
+          <button
+            type="button"
+            class="filter-tip-btn"
+            data-tip-toggle="attribute"
+            aria-expanded="false"
+            aria-controls="filter-tip-attribute"
+            title={dict.tipLabel}
+          >
+            ?
+          </button>
+        </div>
+        <div class="filter-tip" id="filter-tip-attribute" data-tip="attribute" hidden>
+          {dict.attributeTip}
+        </div>
+        <div class="filter-checks">
+          {
+            attributeKeys.map((key) => (
+              <label class="filter-check">
+                <input type="checkbox" data-attribute={key} />
+                <span>{dict.attributes[key]}</span>
+              </label>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="filter-dim" role="group" aria-label={dict.fieldLabel}>
+        <div class="filter-dim-heading">
+          <span class="filter-dim-label">{dict.fieldLabel}</span>
+          <button
+            type="button"
+            class="filter-tip-btn"
+            data-tip-toggle="field"
+            aria-expanded="false"
+            aria-controls="filter-tip-field"
+            title={dict.tipLabel}
+          >
+            ?
+          </button>
+        </div>
+        <div class="filter-tip" id="filter-tip-field" data-tip="field" hidden>
+          {dict.fieldTip}
+        </div>
+        <div class="filter-checks">
+          {
+            fieldKeys.map((key) => (
+              <label class="filter-check">
+                <input type="checkbox" data-field={key} />
+                <span>{dict.fields[key]}</span>
+              </label>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="filter-dim" role="group" aria-label={dict.stageLabel}>
+        <div class="filter-dim-heading">
+          <span class="filter-dim-label">{dict.stageLabel}</span>
+          <button
+            type="button"
+            class="filter-tip-btn"
+            data-tip-toggle="stage"
+            aria-expanded="false"
+            aria-controls="filter-tip-stage"
+            title={dict.tipLabel}
+          >
+            ?
+          </button>
+        </div>
+        <div class="filter-tip" id="filter-tip-stage" data-tip="stage" hidden>
+          {dict.stageTip}
+        </div>
+        <div class="filter-checks">
+          {
+            stageKeys.map((key) => (
+              <label class="filter-check">
+                <input type="checkbox" data-stage={key} />
+                <span>{dict.stages[key]}</span>
+              </label>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </aside>
 
@@ -141,8 +224,10 @@ const totalCount = figures.length;
         <li
           data-figure-item
           data-name={`${figure.data.name} ${figure.data.nameAlt}`.toLowerCase()}
-          data-categories={figure.data.categories.join(',')}
           data-functions={figure.data.functions.join(',')}
+          data-attribute={figure.data.attribute}
+          data-field={figure.data.field}
+          data-stage={figure.data.stage}
         >
           <FigureCard
             locale={locale}
@@ -152,8 +237,10 @@ const totalCount = figures.length;
             nameAlt={figure.data.nameAlt}
             era={figure.data.era}
             summary={figure.data.summary}
-            categories={figure.data.categories}
             functions={figure.data.functions}
+            attribute={figure.data.attribute}
+            field={figure.data.field}
+            stage={figure.data.stage}
           />
         </li>
       ))
@@ -171,16 +258,28 @@ const totalCount = figures.length;
   const countEl = document.querySelector<HTMLElement>('[data-result-count]');
   const clearBtn = document.querySelector<HTMLButtonElement>('[data-clear]');
   const viewBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view]'));
-  const categoryInputs = Array.from(
-    root?.querySelectorAll<HTMLInputElement>('input[data-category]') || [],
-  );
   const functionInputs = Array.from(
     root?.querySelectorAll<HTMLInputElement>('input[data-function]') || [],
+  );
+  const attributeInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-attribute]') || [],
+  );
+  const fieldInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-field]') || [],
+  );
+  const stageInputs = Array.from(
+    root?.querySelectorAll<HTMLInputElement>('input[data-stage]') || [],
+  );
+  const tipButtons = Array.from(
+    root?.querySelectorAll<HTMLButtonElement>('[data-tip-toggle]') || [],
   );
   const storageKey = 'revelation-figure-view';
   const resultTemplate = root?.dataset.resultTemplate || '{n}';
 
-  function selectedValues(inputs: HTMLInputElement[], attr: 'category' | 'function') {
+  function selectedValues(
+    inputs: HTMLInputElement[],
+    attr: 'function' | 'attribute' | 'field' | 'stage',
+  ) {
     return inputs
       .filter((input) => input.checked)
       .map((input) => input.dataset[attr] || '')
@@ -192,20 +291,31 @@ const totalCount = figures.length;
     return selected.some((value) => haystack.includes(value));
   }
 
+  function matchesOne(value: string, selected: string[]) {
+    if (selected.length === 0) return true;
+    return selected.includes(value);
+  }
+
   function applyFilters() {
     const q = (search?.value || '').trim().toLowerCase();
-    const activeCategories = selectedValues(categoryInputs, 'category');
     const activeFunctions = selectedValues(functionInputs, 'function');
+    const activeAttributes = selectedValues(attributeInputs, 'attribute');
+    const activeFields = selectedValues(fieldInputs, 'field');
+    const activeStages = selectedValues(stageInputs, 'stage');
     let visible = 0;
 
     for (const item of items) {
-      const cats = (item.dataset.categories || '').split(',').filter(Boolean);
       const functions = (item.dataset.functions || '').split(',').filter(Boolean);
+      const attribute = item.dataset.attribute || '';
+      const field = item.dataset.field || '';
+      const stage = item.dataset.stage || '';
       const name = item.dataset.name || '';
-      const catOk = matchesAny(cats, activeCategories);
       const functionOk = matchesAny(functions, activeFunctions);
+      const attributeOk = matchesOne(attribute, activeAttributes);
+      const fieldOk = matchesOne(field, activeFields);
+      const stageOk = matchesOne(stage, activeStages);
       const qOk = !q || name.includes(q);
-      const show = catOk && functionOk && qOk;
+      const show = functionOk && attributeOk && fieldOk && stageOk && qOk;
       item.hidden = !show;
       item.classList.toggle('is-filtered-out', !show);
       if (show) visible += 1;
@@ -213,16 +323,18 @@ const totalCount = figures.length;
 
     if (empty) empty.hidden = visible > 0;
     if (countEl) countEl.textContent = resultTemplate.replace('{n}', String(visible));
-    const filtered = activeCategories.length > 0 || activeFunctions.length > 0 || Boolean(q);
+    const filtered =
+      activeFunctions.length > 0 ||
+      activeAttributes.length > 0 ||
+      activeFields.length > 0 ||
+      activeStages.length > 0 ||
+      Boolean(q);
     if (clearBtn) clearBtn.hidden = !filtered;
     root?.classList.toggle('has-filter', filtered);
   }
 
   function clearFilters() {
-    categoryInputs.forEach((input) => {
-      input.checked = false;
-    });
-    functionInputs.forEach((input) => {
+    [...functionInputs, ...attributeInputs, ...fieldInputs, ...stageInputs].forEach((input) => {
       input.checked = false;
     });
     if (search) search.value = '';
@@ -244,7 +356,38 @@ const totalCount = figures.length;
     }
   }
 
-  [...categoryInputs, ...functionInputs].forEach((input) => {
+  function closeTips(except?: string) {
+    tipButtons.forEach((btn) => {
+      const id = btn.dataset.tipToggle || '';
+      if (except && id === except) return;
+      btn.setAttribute('aria-expanded', 'false');
+      const panel = root?.querySelector<HTMLElement>(`[data-tip="${id}"]`);
+      if (panel) panel.hidden = true;
+    });
+  }
+
+  tipButtons.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const id = btn.dataset.tipToggle || '';
+      const panel = root?.querySelector<HTMLElement>(`[data-tip="${id}"]`);
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      closeTips(id);
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      if (panel) panel.hidden = open;
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as Node | null;
+    if (target && root?.contains(target)) {
+      const onTip = (target as HTMLElement).closest?.('[data-tip], [data-tip-toggle]');
+      if (onTip) return;
+    }
+    closeTips();
+  });
+
+  [...functionInputs, ...attributeInputs, ...fieldInputs, ...stageInputs].forEach((input) => {
     input.addEventListener('change', applyFilters);
   });
 

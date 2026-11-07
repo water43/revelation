@@ -835,6 +835,47 @@ html.page-home .site-main--home {
   border-color: var(--forest);
 }
 
+.filter-dim-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.filter-dim-heading .filter-dim-label {
+  margin-bottom: 0;
+}
+
+.filter-tip-btn {
+  width: 1.1rem;
+  height: 1.1rem;
+  padding: 0;
+  border: 1px solid rgba(28, 24, 20, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-mute);
+  font: inherit;
+  font-size: 0.72rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.filter-tip-btn[aria-expanded='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.filter-tip {
+  margin: 0 0 0.45rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
 .filter-dim-functions {
   display: grid;
   gap: 0.35rem;
@@ -1111,6 +1152,24 @@ html.page-home .site-main--home {
   color: var(--ink);
   border-color: rgba(28, 28, 26, 0.28);
   background: rgba(28, 28, 26, 0.04);
+}
+
+.tag-attribute {
+  color: var(--accent);
+  border-color: rgba(139, 58, 42, 0.28);
+  background: rgba(139, 58, 42, 0.06);
+}
+
+.tag-field {
+  color: var(--forest);
+  border-color: rgba(47, 74, 60, 0.28);
+  background: rgba(47, 74, 60, 0.06);
+}
+
+.tag-stage {
+  color: var(--ink-soft);
+  border-color: rgba(28, 24, 20, 0.22);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .empty {

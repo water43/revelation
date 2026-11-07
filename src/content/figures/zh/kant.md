@@ -5,6 +5,9 @@ nameAlt: Immanuel Kant
 era: 1724–1804
 categories: [philosopher]
 functions: [knowledge]
+attribute: data
+field: canon
+stage: mega
 summary: 德意志古典哲学的奠基者，以批判哲学追问认识、道德与审美的先天条件，深刻改写了现代思想版图。
 works:
   - 纯粹理性批判

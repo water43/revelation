@@ -5,6 +5,9 @@ nameAlt: 赫拉克利特
 era: c. 535–475 BCE
 categories: [philosopher]
 functions: [knowledge]
+attribute: virus
+field: canon
+stage: perfect
 summary: Pre-Socratic thinker of becoming and the unity of opposites, known for fragments such as “you cannot step twice into the same river.”
 works:
   - On Nature (fragments)

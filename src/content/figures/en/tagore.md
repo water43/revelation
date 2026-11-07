@@ -5,6 +5,9 @@ nameAlt: 罗宾德拉纳特·泰戈尔
 era: 1861–1941
 categories: [literary]
 functions: [meaning]
+attribute: vaccine
+field: canon
+stage: mega
 summary: Indian poet, writer, and thinker; the first Asian Nobel laureate in literature, renowned for Gitanjali.
 works:
   - Gitanjali

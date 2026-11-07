@@ -5,6 +5,9 @@ nameAlt: Henry Ford
 era: 1863–1947
 categories: [engineer]
 functions: [production, enterprise]
+attribute: virus
+field: workshop
+stage: perfect
 summary: 美国工业家与福特汽车公司创始人，以推广汽车装配线与大规模生产 T 型车而闻名。
 works:
   - T 型车

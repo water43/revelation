@@ -27,6 +27,8 @@ export const ui = {
       decision: '决策',
     } as Record<string, string>,
     functionLabel: '职能',
+    functionTip:
+      '人物在共同体里主要贡献什么功能。可多选：知解（知识/圣法/意义）、政序（秩序/决策/护持）、营流（流通/经营/生产组织）、践履（执行/劳作/服务）。',
     functions: {
       knowledge: '知识',
       sacred: '圣法',
@@ -47,6 +49,34 @@ export const ui = {
       economy: '营流',
       practice: '践履',
     },
+    attributeLabel: '属性',
+    attributeTip:
+      '借用数码宝贝主三属，标人物对待既有秩序的相性（非道德好坏）。疫苗种：守护、恢复、抑制改写；数据种：适应环境、按规程共存；病毒种：改写环境以迁就自身。相克：疫苗→病毒→数据→疫苗。',
+    attributes: {
+      vaccine: '疫苗种',
+      data: '数据种',
+      virus: '病毒种',
+    } as Record<string, string>,
+    fieldLabel: '场域',
+    fieldTip:
+      '人物主要活动的场域。庙堂：政制与祭祀权威；经典：思想与诗文传统；工场：工程与技术组织；市井：交换与城市职业；田野：农渔牧与乡土劳作。',
+    fields: {
+      temple: '庙堂',
+      canon: '经典',
+      workshop: '工场',
+      market: '市井',
+      land: '田野',
+    } as Record<string, string>,
+    stageLabel: '发展',
+    stageTip:
+      '借用数码宝贝进化等级，标这条路走到哪一档（非职位高低）。成长期：初期定型；成熟期：功能已清；完全体：该路典型完成态；究极体：极限或集大成。',
+    stages: {
+      rookie: '成长期',
+      champion: '成熟期',
+      perfect: '完全体',
+      mega: '究极体',
+    } as Record<string, string>,
+    tipLabel: '说明',
     works: '代表作品',
     thesis: '论题',
     backToFigure: '返回人物',
@@ -136,6 +166,8 @@ export const ui = {
       decision: 'Decision',
     } as Record<string, string>,
     functionLabel: 'Function',
+    functionTip:
+      'What the figure mainly contributes in a community. Multi-select: Insight (knowledge / sacred law / meaning), Polity (order / decision / guardianship), Economy (circulation / enterprise / production), Practice (execution / labor / service).',
     functions: {
       knowledge: 'Knowledge',
       sacred: 'Sacred Law',
@@ -156,6 +188,34 @@ export const ui = {
       economy: 'Economy',
       practice: 'Practice',
     },
+    attributeLabel: 'Attribute',
+    attributeTip:
+      'Digimon’s three primary attributes—how a figure relates to existing order (not moral rank). Vaccine: protect and restore; Data: adapt and coexist by rule; Virus: rewrite the environment for itself. Matchup: Vaccine → Virus → Data → Vaccine.',
+    attributes: {
+      vaccine: 'Vaccine',
+      data: 'Data',
+      virus: 'Virus',
+    } as Record<string, string>,
+    fieldLabel: 'Field',
+    fieldTip:
+      'Main arena of activity. Temple: polity and sacred authority; Canon: thought and letters; Workshop: engineering and technical organization; Market: exchange and urban work; Land: farming, fishing, herding.',
+    fields: {
+      temple: 'Temple',
+      canon: 'Canon',
+      workshop: 'Workshop',
+      market: 'Market',
+      land: 'Land',
+    } as Record<string, string>,
+    stageLabel: 'Stage',
+    stageTip:
+      'Digimon evolution stages for how far this path has gone (not office rank). Rookie: early form; Champion: role is clear; Ultimate: typical completion; Mega: limit or synthesis.',
+    stages: {
+      rookie: 'Rookie',
+      champion: 'Champion',
+      perfect: 'Ultimate',
+      mega: 'Mega',
+    } as Record<string, string>,
+    tipLabel: 'About',
     works: 'Notable works',
     thesis: 'Thesis',
     backToFigure: 'Back to figure',

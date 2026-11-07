@@ -5,6 +5,9 @@ nameAlt: 沿海捕捞人
 era: c. pre-industrial to modern
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: The coastal catcher stakes the take on tide and boat; the way out is quotas, safety, and traceable landings—not another net.
 works:
   - Putting to sea with the tide

@@ -5,6 +5,9 @@ nameAlt: 闰土
 era: Late Qing to early Republic
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: "Laboring life trains little school-style speculation; Lu Xun’s Runtu is a boy who could already tell, worn down by survival and rank—not a villager who never learned to think."
 works:
   - Lu Xun, “My Old Home”

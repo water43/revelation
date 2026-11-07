@@ -5,6 +5,9 @@ nameAlt: Coastal Fisher
 era: 约前工业至近代
 categories: [folk]
 functions: [labor]
+attribute: data
+field: land
+stage: perfect
 summary: 出海捕捞的人把收成押在潮汛与船上；突破点在配额、安全与上岸可追溯，而不是再多加一张网。
 works:
   - 赶潮出海

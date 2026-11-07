@@ -5,6 +5,9 @@ nameAlt: Jean-Jacques Rousseau
 era: 1712–1778
 categories: [philosopher]
 functions: [knowledge, order]
+attribute: virus
+field: temple
+stage: perfect
 summary: 日内瓦裔法语启蒙思想家，以社会契约与人民主权论证：正当的政治秩序应由作为主权者的人民参与制定共同规则。
 works:
   - 社会契约论

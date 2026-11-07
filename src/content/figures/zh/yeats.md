@@ -5,6 +5,9 @@ nameAlt: William Butler Yeats
 era: 1865–1939
 categories: [literary]
 functions: [meaning]
+attribute: vaccine
+field: canon
+stage: perfect
 summary: 爱尔兰诗人与剧作家，象征主义与现代主义的桥梁人物，1923 年诺贝尔文学奖得主。
 works:
   - 当你老了
