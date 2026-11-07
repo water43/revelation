@@ -28,7 +28,7 @@ export const ui = {
     } as Record<string, string>,
     functionLabel: '职能',
     functionTip:
-      '人物在共同体里主要贡献什么功能。可多选：知解（知识/圣法/意义）、政序（秩序/决策/护持）、营流（流通/经营/生产组织）、践履（执行/劳作/服务）。',
+      '人物在共同体里主要贡献什么功能。可多选：知解（意义/圣法/知识）、政序（护持/决策/秩序）、营流（生产组织/经营/流通）、践履（服务/劳作/执行）。',
     functions: {
       knowledge: '知识',
       sacred: '圣法',
@@ -169,7 +169,7 @@ export const ui = {
     } as Record<string, string>,
     functionLabel: 'Function',
     functionTip:
-      'What the figure mainly contributes in a community. Multi-select: Insight (knowledge / sacred law / meaning), Polity (order / decision / guardianship), Economy (circulation / enterprise / production), Practice (execution / labor / service).',
+      'What the figure mainly contributes in a community. Multi-select: Insight (meaning / sacred law / knowledge), Polity (guardianship / decision / order), Economy (production / enterprise / circulation), Practice (service / labor / execution).',
     functions: {
       knowledge: 'Knowledge',
       sacred: 'Sacred Law',

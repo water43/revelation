@@ -3,18 +3,18 @@ import { glob } from 'astro/loaders';
 
 /** Hard-12 functional roles. */
 export const functionKeys = [
-  'knowledge',
-  'sacred',
   'meaning',
-  'order',
-  'decision',
+  'sacred',
+  'knowledge',
   'guard',
-  'circulation',
-  'enterprise',
+  'decision',
+  'order',
   'production',
-  'execution',
-  'labor',
+  'enterprise',
+  'circulation',
   'service',
+  'labor',
+  'execution',
 ] as const;
 
 /** Digimon-style attributes (primary three only). */
