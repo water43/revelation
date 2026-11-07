@@ -18,23 +18,19 @@ const figures = all
   .filter((entry) => entry.id.startsWith(`${locale}/`))
   .sort((a, b) => a.data.order - b.data.order);
 
-const functionGroups = [
-  {
-    key: 'insight',
-    keys: ['knowledge', 'sacred', 'meaning'],
-  },
-  {
-    key: 'polity',
-    keys: ['order', 'decision', 'guard'],
-  },
-  {
-    key: 'economy',
-    keys: ['circulation', 'enterprise', 'production'],
-  },
-  {
-    key: 'practice',
-    keys: ['execution', 'labor', 'service'],
-  },
+const functionKeys = [
+  'knowledge',
+  'sacred',
+  'meaning',
+  'order',
+  'decision',
+  'guard',
+  'circulation',
+  'enterprise',
+  'production',
+  'execution',
+  'labor',
+  'service',
 ] as const;
 
 const attributeKeys = ['vaccine', 'data', 'virus'] as const;
@@ -87,11 +83,22 @@ const totalCount = figures.length;
             {dict.viewList}
           </button>
         </div>
+        <button
+          type="button"
+          class="filter-fold-btn"
+          data-filter-fold
+          data-expand-label={dict.filterExpand}
+          data-collapse-label={dict.filterCollapse}
+          aria-expanded="true"
+          aria-controls="filter-dims"
+        >
+          {dict.filterCollapse}
+        </button>
       </div>
     </div>
 
-    <div class="filter-dims">
-      <div class="filter-dim filter-dim-functions" role="group" aria-label={dict.functionLabel}>
+    <div class="filter-dims" id="filter-dims" data-filter-dims>
+      <div class="filter-dim" role="group" aria-label={dict.functionLabel}>
         <div class="filter-dim-heading">
           <span class="filter-dim-label">{dict.functionLabel}</span>
           <button
@@ -108,22 +115,13 @@ const totalCount = figures.length;
         <div class="filter-tip" id="filter-tip-function" data-tip="function" hidden>
           {dict.functionTip}
         </div>
-        <div class="filter-function-groups">
+        <div class="filter-checks">
           {
-            functionGroups.map((group) => (
-              <fieldset class="filter-function-group">
-                <legend class="filter-function-group-label">
-                  {dict.functionGroups[group.key]}
-                </legend>
-                <div class="filter-checks">
-                  {group.keys.map((key) => (
-                    <label class="filter-check filter-check-function">
-                      <input type="checkbox" data-function={key} />
-                      <span>{dict.functions[key]}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
+            functionKeys.map((key) => (
+              <label class="filter-check filter-check-function">
+                <input type="checkbox" data-function={key} />
+                <span>{dict.functions[key]}</span>
+              </label>
             ))
           }
         </div>
@@ -273,8 +271,13 @@ const totalCount = figures.length;
   const tipButtons = Array.from(
     root?.querySelectorAll<HTMLButtonElement>('[data-tip-toggle]') || [],
   );
+  const foldBtn = document.querySelector<HTMLButtonElement>('[data-filter-fold]');
+  const dims = document.querySelector<HTMLElement>('[data-filter-dims]');
   const storageKey = 'revelation-figure-view';
+  const foldStorageKey = 'revelation-filter-expanded';
   const resultTemplate = root?.dataset.resultTemplate || '{n}';
+  const collapseLabel = foldBtn?.dataset.collapseLabel || 'Collapse';
+  const expandLabel = foldBtn?.dataset.expandLabel || 'Expand';
 
   function selectedValues(
     inputs: HTMLInputElement[],
@@ -399,6 +402,28 @@ const totalCount = figures.length;
 
   search?.addEventListener('input', applyFilters);
 
+  function setFilterExpanded(expanded: boolean) {
+    root?.classList.toggle('is-collapsed', !expanded);
+    if (dims) dims.hidden = !expanded;
+    if (foldBtn) {
+      foldBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      foldBtn.textContent = expanded
+        ? foldBtn.dataset.collapseLabel || collapseLabel
+        : foldBtn.dataset.expandLabel || expandLabel;
+    }
+    try {
+      localStorage.setItem(foldStorageKey, expanded ? '1' : '0');
+    } catch {
+      /* ignore */
+    }
+  }
+
+  foldBtn?.addEventListener('click', () => {
+    const open = foldBtn.getAttribute('aria-expanded') === 'true';
+    setFilterExpanded(!open);
+    if (open) closeTips();
+  });
+
   applyFilters();
 
   try {
@@ -406,5 +431,17 @@ const totalCount = figures.length;
     if (saved === 'list' || saved === 'card') setView(saved);
   } catch {
     /* ignore */
+  }
+
+  try {
+    const savedFold = localStorage.getItem(foldStorageKey);
+    if (savedFold === '0' || savedFold === '1') {
+      setFilterExpanded(savedFold === '1');
+    } else {
+      const mobile = window.matchMedia('(max-width: 719px)').matches;
+      setFilterExpanded(!mobile);
+    }
+  } catch {
+    setFilterExpanded(true);
   }
 </script>
