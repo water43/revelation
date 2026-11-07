@@ -404,12 +404,13 @@ const totalCount = figures.length;
 
   function setFilterExpanded(expanded: boolean) {
     root?.classList.toggle('is-collapsed', !expanded);
-    if (dims) dims.hidden = !expanded;
+    if (dims) {
+      dims.hidden = !expanded;
+      dims.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+    }
     if (foldBtn) {
       foldBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      foldBtn.textContent = expanded
-        ? foldBtn.dataset.collapseLabel || collapseLabel
-        : foldBtn.dataset.expandLabel || expandLabel;
+      foldBtn.textContent = expanded ? collapseLabel : expandLabel;
     }
     try {
       localStorage.setItem(foldStorageKey, expanded ? '1' : '0');
@@ -418,8 +419,10 @@ const totalCount = figures.length;
     }
   }
 
-  foldBtn?.addEventListener('click', () => {
-    const open = foldBtn.getAttribute('aria-expanded') === 'true';
+  foldBtn?.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const open = foldBtn.getAttribute('aria-expanded') !== 'false';
     setFilterExpanded(!open);
     if (open) closeTips();
   });
