@@ -32,12 +32,80 @@ order: 64
 
 The multilateral summit officer is a constructed contemporary role in foreign affairs and international economic coordination—not one ministry letterhead, and not one documented biography. The work sits among calendars, draft texts, cables, and the gaps between side meetings. Heads of state and government, foreign and defense ministers, and finance chiefs rotate onto the stage; meeting names change; what must be held is **which week needs a position, which communiqué can be signed, which bilateral must be threaded into the multilateral seam**.
 
-The yearly trunk runs in four bands. Global governance and major-power summits: the UN General Assembly general debate (UNGA, New York, often September) is the densest window for leaders and foreign ministers; G7, G20, BRICS, and Shanghai Cooperation Organisation (SCO) summits are mostly annual with rotating hosts; NATO summits are frequent but not strictly yearly. Asia-Pacific / East Asia: the ASEAN Summit and related meetings (ASEAN+1, +3), the East Asia Summit (EAS, usually alongside ASEAN), APEC Economic Leaders’ Meeting, Boao Forum for Asia, and the Shangri-La Dialogue are basically annual; the Asia–Europe Meeting (ASEM) is about every two years. Economy and finance: the World Economic Forum in Davos sits early in the year; IMF/World Bank Spring Meetings and Annual Meetings split spring and autumn; WTO Ministerial Conferences and OPEC/OPEC+ ministerial meetings are irregular or many times a year—they enter the calendar with a special mark, not as “one show per year.” Climate, development, and health: the UN Climate Change Conference (COP) and the World Health Assembly (WHA) are annual; the UN Environment Assembly (UNEA) is about biennial.
+The yearly circuit is kept as tables by block. Trunk memory: global **UNGA, G7, G20, BRICS, SCO**; Asia-Pacific **ASEAN suite, EAS, APEC**; economy **Davos, IMF/World Bank**; climate **COP**. Biennial and triennial meetings are marked apart so they are not treated as must-run every year.
+
+#### Global governance / major-power summits
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| UNGA general debate | Annual | New York, September; densest leader/FM window |
+| G7 Summit | Annual | G7 + EU; rotating host |
+| G20 Summit | Annual | Major economies; rotating host |
+| BRICS Summit | Annual | Larger membership after expansion |
+| SCO Summit | Annual | Eurasian security and cooperation |
+| NATO Summit | Frequent, not strictly yearly | Security alliance |
+
+#### Asia-Pacific / East Asia
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| ASEAN Summit and related meetings | Annual | Includes ASEAN+1, +3, EAS, etc. |
+| East Asia Summit (EAS) | Annual | Usually alongside ASEAN suite |
+| APEC Economic Leaders’ Meeting | Annual | 21 member economies |
+| Boao Forum for Asia | Annual | Hainan; economic dialogue |
+| Shangri-La Dialogue | Annual | Singapore; defence and security |
+| Asia–Europe Meeting (ASEM) | ~Biennial | Asia–Europe leaders |
+
+#### Economy / finance
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| World Economic Forum (Davos) | Annual | Switzerland; early year |
+| IMF/World Bank Spring Meetings | Annual | Finance ministers, central banks |
+| IMF/World Bank Annual Meetings | Annual | Autumn |
+| WTO Ministerial Conference | Irregular | Trade rules; not yearly |
+| OPEC / OPEC+ ministerial | Several times a year | Oil output and prices |
+
+#### Climate / development / health
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| UN Climate Change Conference (COP) | Annual | Climate negotiations |
+| World Health Assembly (WHA) | Annual | WHO, Geneva |
+| UN Environment Assembly (UNEA) | ~Biennial | Environmental governance |
 
 In functional terms the role is Decision first, Order second: decision is agenda triage and line closure; order is writing multilateral rhythm into a runnable circuit—who flies when, who syncs, how outcomes flow back to domestic ministries. Attribute is Data: the job runs on cables, drafts, footnotes, and timetables, not on one improvised remark rewriting the field. Field is Temple: New York, Geneva, host capitals, islands, and resort towns rotate, still inside formal diplomatic and ministerial space. Stage is Perfect: able to carry one circuit’s full yearly loop, not only the logistics of a single meeting.
 
 ### Extended notes
 
-Regional organisations and security dialogues also enter the circuit, at different densities. African Union (AU) summits often one to two a year; Arab League summits roughly annual; European Council summits many times a year; Pacific Islands Forum (PIF) annual; Summit of the Americas about every two to three years; Commonwealth Heads of Government Meeting (CHOGM) about biennial. Munich Security Conference, Shangri-La Dialogue, Manama Dialogue and peers skew to defense and security officials, yet often set the security wording of later leaders’ meetings. Another set is “often named, not necessarily yearly”: Forum on China–Africa Cooperation (FOCAC) and Tokyo International Conference on African Development (TICAD) about every three years; Quad leaders’ meetings irregular; NPT/arms-control review conferences multi-year—the officer tags these as **cycle pieces** so they are not mistaken for the annual trunk.
+Regional organisations and security dialogues also enter the circuit, at different densities; another set is often named but not necessarily yearly.
+
+#### Regional organisation summits
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| African Union (AU) Summit | Often 1–2 / year | African continent |
+| Arab League Summit | Roughly annual | Arab states |
+| European Council | Several times a year | EU leaders |
+| Pacific Islands Forum (PIF) | Annual | South Pacific |
+| Summit of the Americas | ~Every 2–3 years | Western Hemisphere |
+| CHOGM | ~Biennial | Commonwealth |
+
+#### Security dialogues (defence / security officials)
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| Munich Security Conference | Annual | European security weather vane |
+| Shangri-La Dialogue | Annual | Asia-Pacific defence (also in AP table) |
+| Manama Dialogue and peers | Annual | Middle East security |
+
+#### Often named, not necessarily yearly
+
+| Meeting | Frequency | Notes |
+|---------|-----------|-------|
+| FOCAC | ~Every 3 years | Tagged as cycle piece |
+| TICAD | ~Every 3 years | Tagged as cycle piece |
+| Quad leaders’ meeting | Irregular | Not annual trunk |
+| NPT / arms-control review conferences | Multi-year | Long cycle |
 
 Day-to-day delivery is usually: a draft yearly calendar with frequencies marked; a one-pager of aims and red lines per meeting; a bilateral pairing sheet; counter-drafts for communiqués and chair’s statements; a post-meeting follow-up list. Limits are plain: small forums never fully cut away; host agendas crowd out planned themes; when domestic ministries clash on line, the multilateral room can only hold the lowest signable text. What must be held is running the leader/minister, mostly-annual trunk—and keeping biennial and triennial meetings from scrambling the year’s sense of rhythm.
