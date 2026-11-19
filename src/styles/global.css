@@ -1400,44 +1400,132 @@ html.page-home .site-main--home {
   }
 }
 
-/* Keep essay / legacy markdown tables readable. */
+/* Meeting / markdown tables: cards on phone, grid table on PC. */
 .detail-body :global(table) {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.35rem;
   font-size: 0.95rem;
-  border: 1px solid var(--line);
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
-.detail-body :global(thead),
-.detail-body :global(tbody),
+.detail-body :global(thead) {
+  display: none;
+}
+
+.detail-body :global(tbody) {
+  display: grid;
+  gap: 0.7rem;
+}
+
 .detail-body :global(tr) {
-  width: 100%;
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 250, 242, 0.55);
 }
 
 .detail-body :global(th),
 .detail-body :global(td) {
-  border: 1px solid var(--line);
-  padding: 0.5rem 0.7rem;
+  border: 0;
+  padding: 0;
   text-align: left;
   vertical-align: top;
-  white-space: nowrap;
-}
-
-.detail-body :global(th) {
-  color: var(--ink-mute);
-  font-weight: 600;
-  background: rgba(28, 24, 20, 0.03);
-}
-
-.detail-body :global(td) {
-  color: var(--ink-soft);
   white-space: normal;
   word-break: break-word;
-  min-width: 8rem;
+}
+
+.detail-body :global(td:nth-child(1)) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.detail-body :global(td:nth-child(2)) {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.1rem 0 0.15rem;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid rgba(47, 74, 60, 0.25);
+  color: var(--forest);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.detail-body :global(td:nth-child(3)) {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.detail-body :global(td:nth-child(n + 4)) {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 720px) {
+  .detail-body :global(table) {
+    display: table;
+    border: 1px solid var(--line);
+    background: transparent;
+  }
+
+  .detail-body :global(thead) {
+    display: table-header-group;
+  }
+
+  .detail-body :global(tbody) {
+    display: table-row-group;
+    gap: 0;
+  }
+
+  .detail-body :global(tr) {
+    display: table-row;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .detail-body :global(th),
+  .detail-body :global(td) {
+    display: table-cell;
+    border: 1px solid var(--line);
+    padding: 0.55rem 0.75rem;
+    vertical-align: top;
+  }
+
+  .detail-body :global(th) {
+    color: var(--ink-mute);
+    font-weight: 600;
+    background: rgba(28, 24, 20, 0.03);
+    white-space: nowrap;
+  }
+
+  .detail-body :global(td:nth-child(1)) {
+    font-family: var(--font-body);
+    font-weight: 600;
+    min-width: 11rem;
+  }
+
+  .detail-body :global(td:nth-child(2)) {
+    width: auto;
+    margin: 0;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    letter-spacing: normal;
+    white-space: nowrap;
+  }
+
+  .detail-body :global(td:nth-child(3)),
+  .detail-body :global(td:nth-child(n + 4)) {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
 }
 
 .works {
